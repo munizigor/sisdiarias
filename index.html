@@ -54,6 +54,7 @@
 			  <select name="destino" class="form-control" required id="destino">
 				<option value="null"></option>
 <!--				<option value="BSB">Brasília</option>-->
+				<option value="BEL">Belo Horizonte</option>
 				<option value="FOR">Fortaleza</option>
 				<option value="MAN">Manaus</option>
 				<option value="POA">Porto Alegre</option>
@@ -130,8 +131,40 @@
 			</div>
 		</div>
 		<h3>CÁLCULO DE DIÁRIAS</h3>
-			</br>
-			</br>
+	<table class="table">
+			<thead>
+				<tr>
+					<th colspan="2">Selecionar todos? <br></th>
+					<th>Matrícula</th>
+					<th>Código</th>
+					<th>Sequência</th>
+					<th>Valor</th>
+					<th>Descrição</th>
+				</tr>
+			</thead>
+			<thead>
+				<tr>
+					<th><label for="SelectAll">Gerar Macro </label> <br>
+					<input id="SelectAll" type="checkbox"/></th>
+					<th><label for="SelectAll2">Autorizado </label> <br>
+					<input id="SelectAll2" type="checkbox"/> </th>
+				</tr>
+			</thead>
+			<tbody>
+
+
+				<tr>
+					<!--<td><input type="checkbox" name="rowSelectCheckBox"/></td>-->
+					<td><input type="checkbox" name="macro_gerada" class="checkbox_macro_gerada" id=macro_gerada5b19ae6e-e921-4ffe-bdbc-a6ec7a093064 value=5b19ae6e-e921-4ffe-bdbc-a6ec7a093064></td>
+					<td><input type="checkbox" name="autorizada" class="checkbox_autorizada" id=autorizada5b19ae6e-e921-4ffe-bdbc-a6ec7a093064 value=5b19ae6e-e921-4ffe-bdbc-a6ec7a093064></td>
+					<td>2036908</td>
+					<td>AUXILIO NATALIDADE - MILITAR </td>
+					<td>1</td>
+					<td>1070,34</td>
+					<td>INCLUSAO DE DEPENDENTE A CONTAR DE 12fev2020  SEI 0005300011809202058  LANCADO POR 53927214191 EM 18fev2020 as 150012</td>
+				</tr>
+			</tbody>
+		</table>
 <!--			TODO: Calcular Diárias-->
 		<h3>CÁLCULO DE AJUDA DE CUSTO</h3>
 			</br>
@@ -142,7 +175,7 @@
 		<p>CBMDF - Corpo de Bombeiros Militar do Distrito Federal</p>
 		<p>Sistema de Cálculo de Diárias e Ajuda de Custo do CBMDF</p>
 		<p>Versão 0.0.1</p>
-		<p>Desenvolvimento: Maj QOBM/Comb. Muniz</p>
+		<p>Desenvolvimento: Maj QOBM/Comb. Igor MUNIZ da Silva</p>
 	</footer>
 	</div>
 	</body>
@@ -160,6 +193,7 @@
             prevText: 'Anterior',
 
         });
+        $(".data").mask("00/00/0000");
 </script>
 
 </html>
