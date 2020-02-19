@@ -30,92 +30,113 @@
 <body>
 	<div class="main-container">
 
-	<!-- Bloco de Scripts -->	
-	<div>
-		
-
-	</div>
-
 
 	<div class="row topo-ini">
 		<a href="/">
 			<p>Sistema de Cálculo de Diárias do CBMDF</p>
 		</a>
 	</div>
-			
-	<?php
-	echo "Hello World";
-	?>
+	<div class="content container">
+		<h2>DADOS GERAIS</h2>
+		<div class="form-row">
+			<div class="form-group col-md-12">
+			  <label>Descrição</label>
+			  <input type="text" name="descricao" maxlength="60" class="form-control" id="descricao" required>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-3">
+			  <label>Publicação Oficial (Boletim ou Nº SEI)</label>
+			  <input type="text" name="publ_of" maxlength="30" class="form-control" id="publ_of" required>
+			</div>
+			<div class="form-group col-md-3">
+			  <label>Destino (Anexo III do Dec. 6.907/2009)</label>
+			  <select name="destino" class="form-control" required id="destino">
+				<option value="null"></option>
+<!--				<option value="BSB">Brasília</option>-->
+				<option value="FOR">Fortaleza</option>
+				<option value="MAN">Manaus</option>
+				<option value="POA">Porto Alegre</option>
+				<option value="REC">Recife</option>
+				<option value="RIO">Rio de Janeiro</option>
+				<option value="SAL">Salvador</option>
+				<option value="SAO">São Paulo</option>
+				<option value="CAP">Demais Capitais</option>
+				<option value="DES">Demais Deslocamentos</option>
 
-	<div class="form-row">
-		<div class="form-group col-md-12">
-		  <label>Descrição</label>
-		  <input type="text" name="descricao" maxlength="60" class="form-control" id="descricao" required>
+			  </select>
+			</div>
+			<div class="form-group col-md-2">
+			  <label>Data de Saída da Sede</label>
+			  <input type="text" name="data_saida" class="form-control data" id="data_saida" type=date required>
+			</div>
+			<div class="form-group col-md-2">
+			  <label>Data de Retorno pra Sede</label>
+			  <input type="text" name="data_retorno" class="form-control data" id="data_retorno" type=date required>
+			</div>
+			<div class="form-group col-md-2">
+			  <label>Classificação da Missão</label>
+			  <select name="missao" class="form-control" required id="missao">
+				<option value="True" selected>Eventual</option>
+				<option value="False">Não Eventual</option>
+			  </select>
+			</div>
 		</div>
-	</div>
-	<div class="form-row">
-		<div class="form-group col-md-3">
-		  <label>Publicação Oficial</label>
-		  <input type="text" name="publ_of" maxlength="30" class="form-control" id="publ_of" required>
-		</div>
-		<div class="form-group col-md-3">
-		  <label>Destino (Conforme Anexo III do Decreto nº 6.907, de 21 de julho de 2009)</label>
-		  <select name="destino" class="form-control" required id="destino">
-			<option value="null"></option>
-			<option value="SAO">São Paulo</option>
-			<option value="RIO">Rio de Janeiro</option>
-			<option value="MAN">Manaus</option>
 
-		  </select>
+		<h2>DADOS DOS MILITARES</h2>
+		<div class="form-row">
+			<div class="form-group col-md-2">
+			  <label>Posto/Graduação</label>
+			  <select name="posto" class="form-control" required id="posto">
+				 <option value="null"></option>
+				 <option value="cel">CORONEL</option>
+				 <option value="tc">TENENTE CORONEL</option>
+				 <option value="maj">MAJOR</option>
+				 <option value="cap">CAPITÃO</option>
+				 <option value="1ten">1º TENENTE</option>
+				 <option value="2ten">2º TENENTE</option>
+				 <option value="st">SUBTENENTE</option>
+				 <option value="asp">ASPIRANTE</option>
+				 <option value="1sgt">1º SARGENTO</option>
+				 <option value="2sgt">2º SARGENTO</option>
+				 <option value="3sgt">3º SARGENTO</option>
+				 <option value="cb">CABO</option>
+				 <option value="sd1">SOLDADO 1ª CLASSE</option>
+				 <option value="sd2">SOLDADO 2ª CLASSE</option>
+				 <option value="cad1">CADETE BM/1</option>
+				 <option value="cad2">CADETE BM/2</option>
+			  </select>
+			</div>
+			<div class="form-group col-md-1">
+			  <label>Matrícula</label>
+			  <input type="text" id="matricula" class="form-control">
+			</div>
+			<div class="form-group col-md-4">
+			  <label>Nome</label>
+			  <input type="text" id="nome" class="form-control">
+			</div>
+			<div class="form-group col-md-2">
+			  <label>Banco</label>
+	<!--			TODO: Usar https://raw.githubusercontent.com/guibranco/BancosBrasileiros/master/bancos.json como fonte de pesquisa-->
+			  <input type="text" id="nome" class="form-control">
+			</div>
+			<div class="form-group col-md-1">
+			  <label>Agência</label>
+			  <input type="text" id="nome" class="form-control">
+			</div>
+			<div class="form-group col-md-2">
+			  <label>Conta</label>
+			  <input type="text" id="nome" class="form-control">
+			</div>
 		</div>
-		<div class="form-group col-md-2">
-		  <label>Saída da Sede</label>
-		  <input type="text" name="data_saida" class="form-control data" id="data_saida" type=date required> 					
-		</div>
-		<div class="form-group col-md-2">
-		  <label>Retorno pra Sede</label>
-		  <input type="text" name="data_retorno" class="form-control data" id="data_retorno" type=date required> 					
-		</div>
-		<div class="form-group col-md-2">
-		  <label>Classificação da Missão</label>
-		  <select name="missao" class="form-control" required id="missao">
-			<option value="True" selected>Eventual</option>
-			<option value="False">Não Eventual</option>
-
-		  </select>
-		</div>
-	</div>
-	
-	<h2>DADOS DOS MILITARES</h2>
-	
-	<div class="form-group col-md-3" disabled>
-	  <label>Posto/Graduação</label>
-	  <select name="posto" class="form-control" required id="posto">
-		 <option value="null"></option>
-		 <option value="cel">CORONEL</option>
-		 <option value="tc">TENENTE CORONEL</option>
-		 <option value="maj">MAJOR</option>
-		 <option value="cap">CAPITÃO</option>
-		 <option value="1ten">1º TENENTE</option>
-		 <option value="2ten">2º TENENTE</option>
-		 <option value="st">SUBTENENTE</option>
-		 <option value="asp">ASPIRANTE</option>
-		 <option value="1sgt">1º SARGENTO</option>
-		 <option value="2sgt">2º SARGENTO</option>
-		 <option value="3sgt">3º SARGENTO</option>
-		 <option value="cb">CABO</option>
-		 <option value="sd1">SOLDADO 1ª CLASSE</option>
-		 <option value="sd2">SOLDADO 2ª CLASSE</option>
-		 <option value="cad1">CADETE BM/1</option>
-		 <option value="cad2">CADETE BM/2</option>
-	</div>
-	<div class="form-group col-md-3" disabled>
-	  <label>Matrícula</label>
-	  <input type="text" id="matricula" class="form-control" readonly>
-	</div>
-	<div class="form-group col-md-6" disabled>
-	  <label>Nome</label>
-	  <input type="text" id="nome" class="form-control" readonly>
+		<h3>CÁLCULO DE DIÁRIAS</h3>
+			</br>
+			</br>
+<!--			TODO: Calcular Diárias-->
+		<h3>CÁLCULO DE AJUDA DE CUSTO</h3>
+			</br>
+			</br>
+<!--			TODO: Calcular Ajuda de Custo-->
 	</div>
 	<footer>
 		<p>CBMDF - Corpo de Bombeiros Militar do Distrito Federal</p>
@@ -125,4 +146,20 @@
 	</footer>
 	</div>
 	</body>
+<script>
+			$(".data").datepicker({
+		    changeMonth: true,
+            changeYear: true,
+            dateFormat: 'dd/mm/yy',
+            dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+            dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+            dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+            monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+            monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+            nextText: 'Próximo',
+            prevText: 'Anterior',
+
+        });
+</script>
+
 </html>
