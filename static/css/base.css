@@ -20,6 +20,30 @@ body {
 	    width: 80%;
 /* TODO: Remover espaço entre colunas */
 	}
+.botao-add{
+   background: url("../img/add_row_icon.gif") no-repeat scroll 0 0;
+   border:0;
+   cursor: pointer;
+   display: block;
+   float:left;
+   height: 16px;
+   margin-right:5px;
+   margin-top: 30px;
+   text-indent: -99999px;
+   width: 16px;
+}
+.botao-del{
+   background: url("../img/delete_row_icon.gif") no-repeat scroll 0 0;
+   border:0;
+   cursor: pointer;
+   display: block;
+   float:left;
+   height: 16px;
+   margin-left:5px;
+   margin-top: 30px;
+   text-indent: -99999px;
+   width: 16px;
+}
 div.main-container {
  min-height: 100vh; /* will cover the 100% of viewport */
  overflow: hidden;
@@ -109,8 +133,6 @@ div.content{
     padding-right: 20px;
     padding-left: 20px;
     max-width: 1200px;
-
-
 }
 div.topo-ini a{
     text-decoration: none;
