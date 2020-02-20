@@ -10,7 +10,16 @@ html,
 body {
  height: 100%;
  position: relative;
+ font-size: .9rem;
 }
+.form-control{
+	height: calc(2rem + 1px);
+	font-size: .9rem;
+}
+.reduce-80{
+	    width: 80%;
+/* TODO: Remover espaço entre colunas */
+	}
 div.main-container {
  min-height: 100vh; /* will cover the 100% of viewport */
  overflow: hidden;
@@ -66,7 +75,12 @@ h2 {
 	margin-bottom: 10px;
 	text-align:center;
     padding-left: 15px;
-    margin-top: 20px;
+    margin-top: 40px;
+}
+h3 {
+    text-align:center;
+    margin-top: 40px;
+    margin-bottom: 10px;
 }
 h3 a {
     padding-left: 15px;
@@ -81,7 +95,7 @@ ul {
 }
 textarea.form-control{
 	resize: none;
-	height: calc(2.25rem + 2px);
+	height: calc(2rem + 1px);
 }
 div.child{
 	margin-bottom: 40px;
@@ -94,7 +108,7 @@ div.content{
     margin-left: 20px;
     padding-right: 20px;
     padding-left: 20px;
-    max-width: 1500px;
+    max-width: 1200px;
 
 
 }
