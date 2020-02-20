@@ -39,174 +39,185 @@
 	</div>
 	<div class="content container">
 		<h2>DADOS GERAIS</h2>
+		<div class="border rounded">
 		<div class="form-row">
-			<div class="form-group col-md-12">
-			  <label>Descrição da Viagem</label>
-			  <input type="text" name="descricao" maxlength="60" class="form-control" id="descricao" required>
+				<div class="form-group col-md-12">
+				  <label>Descrição da Viagem</label>
+				  <input type="text" name="descricao" maxlength="60" class="form-control" id="descricao" required>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-3">
+				  <label>Publicação Oficial (Boletim ou Nº SEI)</label>
+				  <input type="text" name="publ_of" maxlength="30" class="form-control" id="publ_of" required>
+				</div>
+				<div class="form-group col-md-3">
+				  <label>Destino</label>
+				  <select name="destino" class="form-control" required id="destino">
+					<option value="null"></option>
+	<!--				<option value="BSB">Brasília</option>-->
+					<option value="BEL">Belo Horizonte</option>
+					<option value="FOR">Fortaleza</option>
+					<option value="MAN">Manaus</option>
+					<option value="POA">Porto Alegre</option>
+					<option value="REC">Recife</option>
+					<option value="RIO">Rio de Janeiro</option>
+					<option value="SAL">Salvador</option>
+					<option value="SAO">São Paulo</option>
+					<option value="CAP">Demais Capitais</option>
+					<option value="DES">Demais Deslocamentos</option>
+
+				  </select>
+				</div>
+				<div class="form-group col-md-2">
+				  <label>Data de Saída da Sede</label>
+				  <input type="text" name="data_saida" class="form-control data" id="data_saida" type=date required>
+				</div>
+				<div class="form-group col-md-2">
+				  <label>Data de Retorno pra Sede</label>
+				  <input type="text" name="data_retorno" class="form-control data" id="data_retorno" type=date required>
+				</div>
+				<div class="form-group col-md-2">
+				  <label>Classificação da Missão</label>
+				  <select name="missao" class="form-control" required id="missao">
+					<option value="True" selected>Eventual</option>
+					<option value="False">Não Eventual</option>
+	<!--			TODO: Definir parâmetros de cálculo e manipular classes 'diarias' e 'ajudadecusto' conforme TCDF-->
+				  </select>
+				</div>
 			</div>
 		</div>
-		<div class="form-row">
-			<div class="form-group col-md-3">
-			  <label>Publicação Oficial (Boletim ou Nº SEI)</label>
-			  <input type="text" name="publ_of" maxlength="30" class="form-control" id="publ_of" required>
-			</div>
-			<div class="form-group col-md-3">
-			  <label>Destino</label>
-			  <select name="destino" class="form-control" required id="destino">
-				<option value="null"></option>
-<!--				<option value="BSB">Brasília</option>-->
-				<option value="BEL">Belo Horizonte</option>
-				<option value="FOR">Fortaleza</option>
-				<option value="MAN">Manaus</option>
-				<option value="POA">Porto Alegre</option>
-				<option value="REC">Recife</option>
-				<option value="RIO">Rio de Janeiro</option>
-				<option value="SAL">Salvador</option>
-				<option value="SAO">São Paulo</option>
-				<option value="CAP">Demais Capitais</option>
-				<option value="DES">Demais Deslocamentos</option>
-
-			  </select>
-			</div>
-			<div class="form-group col-md-2">
-			  <label>Data de Saída da Sede</label>
-			  <input type="text" name="data_saida" class="form-control data" id="data_saida" type=date required>
-			</div>
-			<div class="form-group col-md-2">
-			  <label>Data de Retorno pra Sede</label>
-			  <input type="text" name="data_retorno" class="form-control data" id="data_retorno" type=date required>
-			</div>
-			<div class="form-group col-md-2">
-			  <label>Classificação da Missão</label>
-			  <select name="missao" class="form-control" required id="missao">
-				<option value="True" selected>Eventual</option>
-				<option value="False">Não Eventual</option>
-<!--			TODO: Definir parâmetros de cálculo e manipular classes 'diarias' e 'ajudadecusto' conforme TCDF-->
-			  </select>
-			</div>
-		</div>
-
 		<h2>DADOS DOS MILITARES</h2>
 		<div class="militares" id="militares">
 			<script type="text/javascript">
         		var n=1;
+        		var c=1;
         		document.write(militar(n));
       		</script>
 <!--			TODO: Inserir label com Militar-->
 		</div>
-		<div class="diarias">
-		<h3>CÁLCULO DE DIÁRIAS</h3>
-			<table class="table">
-					<thead>
-						<tr>
-							<th>Matrícula</th>
-							<th>Posto/Graduação</th>
-							<th>Nome</th>
-							<th>Valor da Diária</th>
-							<th>Valor Bruto da Diária</th>
-							<th>Devolução Aux. Alimentação</th>
-							<th>Valor Líquido</th>
-						</tr>
-					</thead>
-					<tbody>
-
-						<tr>
-							<!--<td><input type="checkbox" name="rowSelectCheckBox"/></td>-->
-							<td>2036908</td>
-							<td>TENENTE-CORONEL</td>
-							<td>JOÃO ALBERTO DOS SANTOS CARMO FERREIRA</td>
-							<td>305,20</td>
-							<td>610,40</td>
-							<td>10,40</td>
-							<td>600,00</td>
-						</tr>
-					</tbody>
-			</table>
+		</br>
+		<div style="text-align: center">
+			<button type="button" class="btn btn-dark">Calcular</button>
+			<button type="button" class="btn btn-dark">Limpar</button>
+			<button type="button" class="btn btn-dark">Exportar</button>
+			<button type="button" class="btn btn-dark">Imprimir</button>
 		</div>
-<!--			TODO: Calcular Diárias-->
-		<div class="ajudadecusto">
-		<h3>CÁLCULO DE AJUDA DE CUSTO</h3>
-			<!--			TODO: Desaparecer Ajuda de Custo caso não entre nas condiçoes-->
-			<table class="table">
-					<thead>
-						<tr>
-							<th>Matrícula</th>
-							<th>Posto/Graduação</th>
-							<th>Nome</th>
-							<th>Valor da Diária</th>
-							<th>Valor Bruto da Diária</th>
-							<th>Devolução Aux. Alimentação</th>
-							<th>Valor Líquido</th>
-						</tr>
-					</thead>
-					<tbody>
+		<div style="display:none;">
+			<div class="diarias">
+			<h3>DIÁRIAS</h3>
+				<table class="table">
+						<thead>
+							<tr>
+								<th>Matrícula</th>
+								<th>Posto/Graduação</th>
+								<th>Nome</th>
+								<th>Valor da Diária</th>
+								<th>Valor Bruto da Diária</th>
+								<th>Devolução Aux. Alimentação</th>
+								<th>Valor Líquido</th>
+							</tr>
+						</thead>
+						<tbody>
 
-						<tr>
-							<!--<td><input type="checkbox" name="rowSelectCheckBox"/></td>-->
-							<td>2036908</td>
-							<td>2036908</td>
-							<td>AUXILIO NATALIDADE - MILITAR </td>
-							<td>1</td>
-							<td>1070,34</td>
-							<td>INCLUSAO DE DEPENDENTE </td>
-							<td>INCLUSAO DE DEPENDENTE </td>
-						</tr>
-					</tbody>
-			</table>
-		</div>
-<!--			TODO: Calcular Ajuda de Custo-->
-		<div class="diarias mensal">
-		<h3>PLANILHA DE PAGAMENTO MENSAL DE DIÁRIAS</h3>
-			<table class="table">
-					<thead>
-						<tr>
-							<th>Matrícula</th>
-							<th>Posto/Graduação</th>
-							<th>Nome</th>
-							<th>Valor da Diária</th>
-							<th>Valor Bruto da Diária</th>
-							<th>Devolução Aux. Alimentação</th>
-							<th>Valor Líquido</th>
-						</tr>
-					</thead>
-					<tbody>
+							<tr>
+								<!--<td><input type="checkbox" name="rowSelectCheckBox"/></td>-->
+								<td>2036908</td>
+								<td>TENENTE-CORONEL</td>
+								<td>JOÃO ALBERTO DOS SANTOS CARMO FERREIRA</td>
+								<td>305,20</td>
+								<td>610,40</td>
+								<td>10,40</td>
+								<td>600,00</td>
+							</tr>
+						</tbody>
+				</table>
+			</div>
+	<!--			TODO: Calcular Diárias-->
+			<div class="ajudadecusto">
+			<h3>AJUDA DE CUSTO</h3>
+				<!--			TODO: Desaparecer Ajuda de Custo caso não entre nas condiçoes-->
+				<table class="table">
+						<thead>
+							<tr>
+								<th>Matrícula</th>
+								<th>Posto/Graduação</th>
+								<th>Nome</th>
+								<th>Valor da Diária</th>
+								<th>Valor Bruto da Diária</th>
+								<th>Devolução Aux. Alimentação</th>
+								<th>Valor Líquido</th>
+							</tr>
+						</thead>
+						<tbody>
 
-						<tr>
-							<!--<td><input type="checkbox" name="rowSelectCheckBox"/></td>-->
-							<td>2036908</td>
-							<td>TENENTE-CORONEL</td>
-							<td>JOÃO ALBERTO DOS SANTOS CARMO FERREIRA</td>
-							<td>305,20</td>
-							<td>610,40</td>
-							<td>10,40</td>
-							<td>600,00</td>
-						</tr>
-					</tbody>
-			</table>
-		</div>
-		<div class="financeiro">
-		<h3>DADOS FINANCEIROS</h3>
-			<table class="table">
-					<thead>
-						<tr>
-							<th>Nome</th>
-							<th>CPF</th>
-							<th>Banco</th>
-							<th>Agência</th>
-							<th>Conta</th>
-						</tr>
-					</thead>
-					<tbody>
+							<tr>
+								<!--<td><input type="checkbox" name="rowSelectCheckBox"/></td>-->
+								<td>2036908</td>
+								<td>2036908</td>
+								<td>AUXILIO NATALIDADE - MILITAR </td>
+								<td>1</td>
+								<td>1070,34</td>
+								<td>INCLUSAO DE DEPENDENTE </td>
+								<td>INCLUSAO DE DEPENDENTE </td>
+							</tr>
+						</tbody>
+				</table>
+			</div>
+	<!--			TODO: Calcular Ajuda de Custo-->
+			<div class="diarias mensal">
+			<h3>PLANILHA DE PAGAMENTO MENSAL DE DIÁRIAS</h3>
+				<table class="table">
+						<thead>
+							<tr>
+								<th>Matrícula</th>
+								<th>Posto/Graduação</th>
+								<th>Nome</th>
+								<th>Valor da Diária</th>
+								<th>Valor Bruto da Diária</th>
+								<th>Devolução Aux. Alimentação</th>
+								<th>Valor Líquido</th>
+							</tr>
+						</thead>
+						<tbody>
 
-						<tr>
-							<td>JOÃO ALBERTO DOS SANTOS CARMO FERREIRA</td>
-							<td>11111111111</td>
-							<td>070</td>
-							<td>2399</td>
-							<td>1016670</td>
-						</tr>
-					</tbody>
-			</table>
+							<tr>
+								<!--<td><input type="checkbox" name="rowSelectCheckBox"/></td>-->
+								<td>2036908</td>
+								<td>TENENTE-CORONEL</td>
+								<td>JOÃO ALBERTO DOS SANTOS CARMO FERREIRA</td>
+								<td>305,20</td>
+								<td>610,40</td>
+								<td>10,40</td>
+								<td>600,00</td>
+							</tr>
+						</tbody>
+				</table>
+			</div>
+			<div class="financeiro">
+			<h3>DADOS FINANCEIROS</h3>
+				<table class="table">
+						<thead>
+							<tr>
+								<th>Nome</th>
+								<th>CPF</th>
+								<th>Banco</th>
+								<th>Agência</th>
+								<th>Conta</th>
+							</tr>
+						</thead>
+						<tbody>
+
+							<tr>
+								<td>JOÃO ALBERTO DOS SANTOS CARMO FERREIRA</td>
+								<td>11111111111</td>
+								<td>070</td>
+								<td>2399</td>
+								<td>1016670</td>
+							</tr>
+						</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
 	<footer>

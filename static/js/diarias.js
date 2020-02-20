@@ -22,9 +22,10 @@
 
         $("div.militares").on('click','input.botao-add', function(e) {
                 n+=1;
+                c+=1;
 //                TODO: Não está somando o 1. Verificar
                 var elem = document.getElementById("militares")
-                elem.insertAdjacentHTML('beforeend', militar(n));
+                elem.insertAdjacentHTML('beforeend', militar(c));
             }
         );
         $("div.militares").on('click','input.botao-del', function(e) {
