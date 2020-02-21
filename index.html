@@ -42,17 +42,17 @@
 		<div class="border rounded">
 		<div class="form-row">
 				<div class="form-group col-md-12">
-				  <label>Descrição da Viagem</label>
+				  <label for="descricao">Descrição da Viagem</label>
 				  <input type="text" name="descricao" maxlength="60" class="form-control" id="descricao" required>
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="form-group col-md-3">
-				  <label>Publicação Oficial (Boletim ou Nº SEI)</label>
+				  <label for="publ_of">Publicação Oficial (Boletim ou Nº SEI)</label>
 				  <input type="text" name="publ_of" maxlength="30" class="form-control" id="publ_of" required>
 				</div>
 				<div class="form-group col-md-3">
-				  <label>Destino</label>
+				  <label for="destino">Destino</label>
 				  <select name="destino" class="form-control" required id="destino">
 					<option value="null"></option>
 	<!--				<option value="BSB">Brasília</option>-->
@@ -70,15 +70,15 @@
 				  </select>
 				</div>
 				<div class="form-group col-md-2">
-				  <label>Data de Saída da Sede</label>
+				  <label for="data_saida">Data de Saída da Sede</label>
 				  <input type="text" name="data_saida" class="form-control data" id="data_saida" type=date required>
 				</div>
 				<div class="form-group col-md-2">
-				  <label>Data de Retorno pra Sede</label>
+				  <label for="data_retorno">Data de Retorno pra Sede</label>
 				  <input type="text" name="data_retorno" class="form-control data" id="data_retorno" type=date required>
 				</div>
 				<div class="form-group col-md-2">
-				  <label>Classificação da Missão</label>
+				  <label for="missao">Classificação da Missão</label>
 				  <select name="missao" class="form-control" required id="missao">
 					<option value="True" selected>Eventual</option>
 					<option value="False">Não Eventual</option>
@@ -98,12 +98,13 @@
 		</div>
 		</br>
 		<div style="text-align: center">
-			<button type="button" class="btn btn-dark">Calcular</button>
-			<button type="button" class="btn btn-dark">Limpar</button>
-			<button type="button" class="btn btn-dark">Exportar</button>
-			<button type="button" class="btn btn-dark">Imprimir</button>
+			<button type="button" id="btn-calcular" onclick="javascript:calcular();" class="btn btn-dark">Calcular</button>
+			<button type="button" id="btn-limpar" onclick="javascript:limpar();"class="btn btn-dark">Limpar</button>
+			<button type="button" id="btn-exportar" onclick="javascript:exportar();" class="btn btn-dark">Exportar</button>
+			<button type="button" id="btn-gerarPDF" onclick="javascript:gerarPDF();" class="btn btn-dark">Gerar PDF</button>
 		</div>
-		<div style="display:none;">
+<!--		<div style="display:none;">-->
+			<div>
 			<div class="diarias">
 			<h3>DIÁRIAS</h3>
 				<table class="table">

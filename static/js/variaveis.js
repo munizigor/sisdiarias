@@ -2,8 +2,12 @@
 function militar(n) {
 return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n}">
 				<div class="form-row col-md-11">
+				<div class="form-group col-md-1">
+				  <label for="matricula-${n}">Matrícula</label>
+				  <input type="text" id="matricula-${n}" name="matricula" class="form-control" required>
+				</div>
 				<div class="form-group col-md-2">
-				  <label>Posto/Grad</label>
+				  <label for="posto-${n}">Posto/Grad</label>
 				  <select name="posto" class="form-control" required id="posto-${n}">
 					 <option value="null"></option>
 					  <!--TODO: Adicionar Cmt Geral. Aqui e no JSON-->
@@ -25,21 +29,17 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 					 <option value="CADETE ULTIMO ANO">CAD/2</option>
 				  </select>
 				</div>
-				<div class="form-group col-md-1">
-				  <label>Matrícula</label>
-				  <input type="text" id="matricula-${n}" class="form-control">
-				</div>
 				<div class="form-group col-md-4">
-				  <label>Nome</label>
-				  <input type="text" id="nome-${n}" class="form-control">
+				  <label for="nome-${n}">Nome</label>
+				  <input type="text" id="nome-${n}" name="nome" class="form-control" required>
 				</div>
 				<div class="form-group col-md-2">
-				  <label>CPF</label>
-				  <input type="text" id="cpf-${n}" class="form-control cpf">
+				  <label for="cpf-${n}">CPF</label>
+				  <input type="text" id="cpf-${n}" name="cpf"  class="form-control cpf" required>
 				</div>
 				<div class="form-group col-md-2">
-			  		<label>Adicional Cert. Profissional</label>
-			  		<select name="acp" class="form-control" id="acp-${n}">
+			  		<label for="acp-${n}">Adicional Cert. Profissional</label>
+			  		<select name="acp" class="form-control" id="acp-${n}" required>
 					<option value=0>Sem ACP</option>
 					<option value=10>Formação (CFSD, CFO)</option>
 					<option value=25>Especialização (CESEI, CMAUT, SCI)</option>
@@ -49,25 +49,25 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 			  		</select>
 				</div>
 				<div class="form-group col-md-2">
-			  		<label>Viajará com Dependente?</label>
-			  		<select name="bool_dep" class="form-control" id="dep-${n}">
+			  		<label for="dep-${n}">Viajará com Dependente?</label>
+			  		<select name="dep" class="form-control" id="dep-${n}" required>
 					<option value="True">SIM</option>
 					<option value="False">NÃO</option>
 <!--			TODO: Aparecer apenas se pagar Ajuda de Custo-->
 			  		</select>
 				</div>
 				<div class="form-group col-md-3">
-				  <label>Banco</label>
+				  <label for="banco-${n}">Banco</label>
 		<!--			TODO: Usar https://raw.githubusercontent.com/guibranco/BancosBrasileiros/master/bancos.json como fonte de pesquisa-->
-				  <input type="text" id="banco-${n}" class="form-control">
+				  <input type="text" id="banco-${n}" name="banco" class="form-control" required>
 				</div>
 				<div class="form-group col-md-1">
-				  <label>Agência</label>
-				  <input type="text" id="agencia-${n}" class="form-control">
+				  <label for="agencia-${n}">Agência</label>
+				  <input type="text" id="agencia-${n}" name="agencia" class="form-control" required>
 				</div>
 				<div class="form-group col-md-1">
-				  <label>Conta</label>
-				  <input type="text" id="conta-${n}" class="form-control">
+				  <label for="conta-${n}">Conta</label>
+				  <input type="text" id="conta-${n}" name="conta" class="form-control" required>
 				</div>
 				</div>
 				<div class="form-group col-md-1">
