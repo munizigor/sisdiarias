@@ -77,3 +77,35 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 			</div>
 			`);
 			}
+
+function diarias(l) {
+    return (
+`<tbody class="diarias-row">
+    <tr>
+        <td>${document.getElementById("matricula-"+String(l)).value}</td>
+        <td>${document.getElementById("posto-"+String(l)).value}</td>
+        <td>${document.getElementById("nome-"+String(l)).value}</td>
+        <td>Valor</td>
+        <td>Valor Bruto</td>
+        <td>Devolucao</td>
+        <td>Liquido</td>
+    </tr>
+</tbody>`
+    );
+}
+
+function financeiro(l) {
+//    posto = document.getElementById("posto-"+String(l));
+//    posto_txt= posto.options[posto.selectedIndex].text;
+    return (
+`<tbody class="financeiro-row">
+    <tr>
+        <td>${document.getElementById("nome-"+String(l)).value}</td>
+        <td>${document.getElementById("cpf-"+String(l)).value}</td>
+        <td>${document.getElementById("banco-"+String(l)).value}</td>
+        <td>${document.getElementById("agencia-"+String(l)).value}</td>
+        <td>${document.getElementById("conta-"+String(l)).value}</td>
+    </tr>
+</tbody>`
+    );
+}

@@ -104,10 +104,10 @@
 			<button type="button" id="btn-gerarPDF" onclick="javascript:gerarPDF();" class="btn btn-dark">Gerar PDF</button>
 		</div>
 <!--		<div style="display:none;">-->
-			<div>
+			<div class="planilha" id="planilha" style="display:none;">
 			<div class="diarias">
 			<h3>DIÁRIAS</h3>
-				<table class="table">
+				<table class="table" id="diarias">
 						<thead>
 							<tr>
 								<th>Matrícula</th>
@@ -119,26 +119,20 @@
 								<th>Valor Líquido</th>
 							</tr>
 						</thead>
-						<tbody>
-
-							<tr>
-								<!--<td><input type="checkbox" name="rowSelectCheckBox"/></td>-->
-								<td>2036908</td>
-								<td>TENENTE-CORONEL</td>
-								<td>JOÃO ALBERTO DOS SANTOS CARMO FERREIRA</td>
-								<td>305,20</td>
-								<td>610,40</td>
-								<td>10,40</td>
-								<td>600,00</td>
-							</tr>
-						</tbody>
 				</table>
 			</div>
 	<!--			TODO: Calcular Diárias-->
+
+
+<!--				TODO: Calulo mensal de diarias
+			<div class="diarias-mensal">
+				<h3>PLANILHA DE PAGAMENTO MENSAL DE DIÁRIAS</h3>
+			</div>
+-->
 			<div class="ajudadecusto">
 			<h3>AJUDA DE CUSTO</h3>
 				<!--			TODO: Desaparecer Ajuda de Custo caso não entre nas condiçoes-->
-				<table class="table">
+				<table class="table" id="ajudadecusto">
 						<thead>
 							<tr>
 								<th>Matrícula</th>
@@ -150,54 +144,12 @@
 								<th>Valor Líquido</th>
 							</tr>
 						</thead>
-						<tbody>
-
-							<tr>
-								<!--<td><input type="checkbox" name="rowSelectCheckBox"/></td>-->
-								<td>2036908</td>
-								<td>2036908</td>
-								<td>AUXILIO NATALIDADE - MILITAR </td>
-								<td>1</td>
-								<td>1070,34</td>
-								<td>INCLUSAO DE DEPENDENTE </td>
-								<td>INCLUSAO DE DEPENDENTE </td>
-							</tr>
-						</tbody>
 				</table>
 			</div>
 	<!--			TODO: Calcular Ajuda de Custo-->
-			<div class="diarias mensal">
-			<h3>PLANILHA DE PAGAMENTO MENSAL DE DIÁRIAS</h3>
-				<table class="table">
-						<thead>
-							<tr>
-								<th>Matrícula</th>
-								<th>Posto/Graduação</th>
-								<th>Nome</th>
-								<th>Valor da Diária</th>
-								<th>Valor Bruto da Diária</th>
-								<th>Devolução Aux. Alimentação</th>
-								<th>Valor Líquido</th>
-							</tr>
-						</thead>
-						<tbody>
-
-							<tr>
-								<!--<td><input type="checkbox" name="rowSelectCheckBox"/></td>-->
-								<td>2036908</td>
-								<td>TENENTE-CORONEL</td>
-								<td>JOÃO ALBERTO DOS SANTOS CARMO FERREIRA</td>
-								<td>305,20</td>
-								<td>610,40</td>
-								<td>10,40</td>
-								<td>600,00</td>
-							</tr>
-						</tbody>
-				</table>
-			</div>
 			<div class="financeiro">
 			<h3>DADOS FINANCEIROS</h3>
-				<table class="table">
+				<table class="table" id="financeiro">
 						<thead>
 							<tr>
 								<th>Nome</th>
@@ -207,16 +159,16 @@
 								<th>Conta</th>
 							</tr>
 						</thead>
-						<tbody>
+<!--						<tbody>-->
 
-							<tr>
-								<td>JOÃO ALBERTO DOS SANTOS CARMO FERREIRA</td>
-								<td>11111111111</td>
-								<td>070</td>
-								<td>2399</td>
-								<td>1016670</td>
-							</tr>
-						</tbody>
+<!--							<tr>-->
+<!--								<td>JOÃO ALBERTO DOS SANTOS CARMO FERREIRA</td>-->
+<!--								<td>11111111111</td>-->
+<!--								<td>070</td>-->
+<!--								<td>2399</td>-->
+<!--								<td>1016670</td>-->
+<!--							</tr>-->
+<!--						</tbody>-->
 				</table>
 			</div>
 		</div>

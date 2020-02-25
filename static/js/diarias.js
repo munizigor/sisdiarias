@@ -95,12 +95,24 @@ for (i=0;i<listcpf.length;i++) {
     }
     );
 }
+
+//Funçoes de calculos individuais
+function calc_ind(id) {
+    $('.'+id+'-row').remove();
+    for (i=0; i<t.length; i++) {
+        var index = t[i].getAttribute('id').substring(4);
+        elem = document.getElementById(id);
+        elem.insertAdjacentHTML('beforeend', window[id](index));
+    }
+}
+
+//Termino funcoes calculos individuais
 function calcular() {
     checar_campos()
-//    t=document.getElementsByName("matricula")
-//    for (i=0; i<t.length; i++) {
-//        if ()
-//    }
+    document.getElementById('planilha').style.display='block';
+    t=document.getElementsByClassName("militares-row");
+    calc_ind('financeiro')
+    calc_ind('diarias')
 //    alert ("Calcular");
 }
 
