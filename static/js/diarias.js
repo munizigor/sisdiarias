@@ -32,6 +32,7 @@
                 setTimeout(function () {document.getElementById(req[i].id).focus();},1);
                 break;
                 }
+            return true;
         }
     }
         //Fim checagem campos obrigatórios
@@ -109,6 +110,9 @@ function calc_ind(id) {
 //Termino funcoes calculos individuais
 function calcular() {
     checar_campos()
+//    if (!checar_campos()) {
+//        return;
+//    }
     document.getElementById('planilha').style.display='block';
     t=document.getElementsByClassName("militares-row");
     calc_ind('financeiro')
