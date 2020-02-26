@@ -41,17 +41,17 @@
 		<h2>DADOS GERAIS</h2>
 		<div class="border rounded">
 		<div class="form-row">
-				<div class="form-group col-md-12">
+				<div class="form-group col-md-10">
 				  <label for="descricao">Descrição da Viagem</label>
 				  <input type="text" name="descricao" maxlength="60" class="form-control" id="descricao" required>
 				</div>
-			</div>
-			<div class="form-row">
-				<div class="form-group col-md-3">
-				  <label for="publ_of">Publicação Oficial (Boletim ou Nº SEI)</label>
+				<div class="form-group col-md-2">
+				  <label for="publ_of">Publicação (Boletim ou Nº SEI)</label>
 				  <input type="text" name="publ_of" maxlength="30" class="form-control" id="publ_of" required>
 				</div>
-				<div class="form-group col-md-3">
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-2">
 				  <label for="destino">Destino</label>
 				  <select name="destino" class="form-control" required id="destino">
 					<option value="null"></option>
@@ -84,6 +84,14 @@
 					<option value="False">Não Eventual</option>
 	<!--			TODO: Definir parâmetros de cálculo e manipular classes 'diarias' e 'ajudadecusto' conforme TCDF-->
 				  </select>
+				</div>
+				<div class="form-group col-md-2">
+				  <label for="qtde_dias">Dias de Afastamento</label>
+				  <input type="text" name="qtde_dias" class="form-control" id="qtde_dias" readonly>
+				</div>
+				<div class="form-group col-md-2">
+				  <label for="qtde_diarias">Quantidade de Diárias</label>
+				  <input type="text" name="qtde_diarias" class="form-control" id="qtde_diarias" readonly>
 				</div>
 			</div>
 		</div>
@@ -140,7 +148,7 @@
 								<th>Remuneração</th>
 								<th>Ajuda de Custo - Ida</th>
 								<th>Ajuda de Custo - Volta</th>
-								<th>Total</th
+								<th>Total</th>
 							</tr>
 						</thead>
 				</table>

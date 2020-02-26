@@ -30,16 +30,17 @@
             if (req[i].value==""||req[i].value=="null"){
                 alert("Campo "+req[i].labels[0].textContent+" vazio");
                 setTimeout(function () {document.getElementById(req[i].id).focus();},1);
-                break;
+                return false;
                 }
-            return true;
         }
+        return true;
     }
         //Fim checagem campos obrigatórios
 
 		$(".data").datepicker({
 		    changeMonth: true,
             changeYear: true,
+            onSelect: function () { calc_datas()},
             dateFormat: 'dd/mm/yy',
             dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
             dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
@@ -50,6 +51,24 @@
             prevText: 'Anterior',
 
         });
+    function toDate(id) {
+    dateStr = document.getElementById(id).value
+    var parts = dateStr.split("/");
+    return new Date(String(parts[1])+'/'+String(parts[0])+'/'+String(parts[2]));
+    }
+
+    function calc_datas () {
+    var datas = document.getElementsByClassName('data');
+    if (datas[0].value!="" && datas[1].value!="") {
+        difftempo = Math.abs(toDate('data_retorno')-toDate('data_saida'));
+        diffdias = Math.ceil(difftempo/(1000 * 60 * 60 * 24))+1;
+        document.getElementById('qtde_dias').value = diffdias
+        document.getElementById('qtde_diarias').value = parseFloat(diffdias)-(0.5)
+//        return alert('data em branco');
+
+    }
+    }
+
         $(".data").mask("00/00/0000");
         $(".cpf").mask("000.000.000-00");
 //Fim dos Parâmetros Iniciais
@@ -76,7 +95,7 @@
 
 //Início das Funções
 //TODO: Terminar essa função
-
+//Verificar CPF
 var listcpf = document.getElementsByName("cpf")
 for (i=0;i<listcpf.length;i++) {
     listcpf[i].addEventListener('blur', function () {
@@ -97,6 +116,7 @@ for (i=0;i<listcpf.length;i++) {
     );
 }
 
+
 //Funçoes de calculos individuais
 function calc_ind(id) {
     $('.'+id+'-row').remove();
@@ -109,15 +129,21 @@ function calc_ind(id) {
 
 //Termino funcoes calculos individuais
 function calcular() {
-    checar_campos()
+//    checar_campos()
 //    if (!checar_campos()) {
-//        return;
-//    }
+    if (false) {
+        return;
+    }
+    else{
+//    TODO: Checar campos nao executa multiplas vezes
+//    TODO: parar se checar campos acusar alerta
     document.getElementById('planilha').style.display='block';
     t=document.getElementsByClassName("militares-row");
     calc_ind('financeiro')
     calc_ind('diarias')
 //    alert ("Calcular");
+    }
+
 }
 
 function limpar() {
