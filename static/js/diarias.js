@@ -57,15 +57,81 @@
     return new Date(String(parts[1])+'/'+String(parts[0])+'/'+String(parts[2]));
     }
 
+function params_ajudacusto () {
+    elems_ajudacusto = document.getElementsByClassName('ajudadecusto_var');
+    if (parseInt(document.getElementById('ajudadecusto_ida').value)==0 && parseInt(document.getElementById('ajudadecusto_volta').value)==0) {
+        for (i=0;i<elems_ajudacusto.length;i++) {
+            elems_ajudacusto[i].style.display='none';
+//            TODO: Zerar valores de acp e dependente se nao for calcular ajuda de custo
+        }
+    }
+    else {
+        for (i=0;i<elems_ajudacusto.length;i++) {
+            elems_ajudacusto[i].style.display='block';
+//            TODO: Inserir required como parametro se for caso de calculo
+        }
+    }
+    }
+
+
     function calc_datas () {
     var datas = document.getElementsByClassName('data');
     if (datas[0].value!="" && datas[1].value!="") {
         difftempo = Math.abs(toDate('data_retorno')-toDate('data_saida'));
         diffdias = Math.ceil(difftempo/(1000 * 60 * 60 * 24))+1;
         document.getElementById('qtde_dias').value = diffdias
-        document.getElementById('qtde_diarias').value = parseFloat(diffdias)-(0.5)
-//        return alert('data em branco');
+//Parametros de diarias
 
+        if ((diffdias<30)) {
+            diffdiarias = parseFloat(diffdias)-(0.5)
+//            document.getElementById('ajudadecusto_ida').value==0
+//            document.getElementById('ajudadecusto_volta').value==0
+        }
+        else if (diffdias>=30 && diffdias<=60 && document.getElementById('missao').value == 'False') {
+            diffdiarias = parseFloat(diffdias)-(0.5)
+//            document.getElementById('ajudadecusto_ida').value=='True'
+//            document.getElementById('ajudadecusto_volta').value=='True'
+        }
+        else if (diffdias>=30 && diffdias<=60) {
+            diffdiarias = 0
+//            document.getElementById('ajudadecusto_ida').value=='False'
+//            document.getElementById('ajudadecusto_volta').value=='False'
+        }
+        else if (document.getElementById('missao').value == 'True') {
+            diffdiarias = parseFloat(diffdias)-60
+        }
+        else if (document.getElementById('missao').value == 'True') {
+            diffdiarias = parseFloat(diffdias)-(0.5)
+        }
+        else {
+            diffdiarias = 0
+        }
+        document.getElementById('qtde_diarias').value = diffdiarias
+
+//Parametros de Ajuda de Custo
+
+        if (diffdias>60 && document.getElementById('missao').value == 'False') {
+            document.getElementById('ajudadecusto_ida').value=0
+            document.getElementById('ajudadecusto_volta').value=0
+        }
+        else if (diffdias>180) {
+            document.getElementById('ajudadecusto_ida').value=2
+            document.getElementById('ajudadecusto_volta').value=2
+        }
+        else if (diffdias>90 && diffdias<=180) {
+            document.getElementById('ajudadecusto_ida').value=2
+            document.getElementById('ajudadecusto_volta').value=1
+        }
+        else if (diffdias>=30 && diffdias<=90) {
+            document.getElementById('ajudadecusto_ida').value=1
+            document.getElementById('ajudadecusto_volta').value=1
+        }
+        else {
+            document.getElementById('ajudadecusto_ida').value=0
+            document.getElementById('ajudadecusto_volta').value=0
+        }
+//Sumir com ACP e Dependente se nao houver ajuda de custo
+        params_ajudacusto ()
     }
     }
 
@@ -81,12 +147,16 @@
 //                TODO: Não está somando o 1. Verificar
                 var elem = document.getElementById("militares")
                 elem.insertAdjacentHTML('beforeend', militar(c));
+                //Sumir com ACP e Dependente se nao houver ajuda de custo
+                params_ajudacusto ()
             }
         );
         $("div.militares").on('click','input.botao-del', function(e) {
                 if (n != 1) {
                     document.getElementById("mil-"+this.value).remove();
                     n-=1;
+                    //Sumir com ACP e Dependente se nao houver ajuda de custo
+                    params_ajudacusto ()
                     }
             }
         );
@@ -130,8 +200,8 @@ function calc_ind(id) {
 //Termino funcoes calculos individuais
 function calcular() {
 //    checar_campos()
-//    if (!checar_campos()) {
-    if (false) {
+    if (!checar_campos()) {
+//    if (false) {
         return;
     }
     else{
@@ -141,6 +211,24 @@ function calcular() {
     t=document.getElementsByClassName("militares-row");
     calc_ind('financeiro')
     calc_ind('diarias')
+    calc_ind('ajudadecusto')
+//Aparecer/desaparecer div diarias
+    if (parseInt(document.getElementById('qtde_diarias').value)==0) {
+        document.getElementById('diarias_div').style.display='none';
+        return ;
+    }
+    else {
+            document.getElementById('diarias_div').style.display='block';
+    }
+
+//Aparecer/desaparecer div ajuda de custo
+    if (parseInt(document.getElementById('ajudadecusto_ida').value)==0 && parseInt(document.getElementById('ajudadecusto_volta').value)==0) {
+        document.getElementById('ajudadecusto_div').style.display='none';
+        return ;
+    }
+    else {
+            document.getElementById('ajudadecusto_div').style.display='block';
+    }
 //    alert ("Calcular");
     }
 

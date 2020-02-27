@@ -1,216 +1,10 @@
-diarias_nac={
-  "BSB": {
-    "CORONEL": 267.9,
-    "TENENTE-CORONEL": 267.9,
-    "MAJOR": 267.9,
-    "CAPITAO": 224.2,
-    "PRIMEIRO TENENTE": 224.2,
-    "SEGUNDO TENENTE": 224.2,
-    "ASPIRANTE": 224.2,
-    "CADETE ULTIMO ANO": 224.2,
-    "CADETE DEMAIS ANOS": 224.2,
-    "SUBTENENTE": 224.2,
-    "PRIMEIRO SARGENTO": 224.2,
-    "SEGUNDO SARGENTO": 224.2,
-    "TERCEIRO SARGENTO": 224.2,
-    "CABO": 186.2,
-    "SOLDADO PRIMEIRA CLASSE": 186.2,
-    "SOLDADO SEGUNDA CLASSE": 186.2
-  }
-,
-"MAN": {
-"CORONEL": 267.9,
-"TENENTE-CORONEL": 267.9,
-"MAJOR": 267.9,
-"CAPITAO": 224.2,
-"PRIMEIRO TENENTE": 224.2,
-"SEGUNDO TENENTE": 224.2,
-"ASPIRANTE": 224.2,
-"CADETE ULTIMO ANO": 224.2,
-"CADETE DEMAIS ANOS": 224.2,
-"SUBTENENTE": 224.2,
-"PRIMEIRO SARGENTO": 224.2,
-"SEGUNDO SARGENTO": 224.2,
-"TERCEIRO SARGENTO": 224.2,
-"CABO": 186.2,
-"SOLDADO PRIMEIRA CLASSE": 186.2,
-"SOLDADO SEGUNDA CLASSE": 186.2
-}
-,
-"RIO": {
-"CORONEL": 267.9,
-"TENENTE-CORONEL": 267.9,
-"MAJOR": 267.9,
-"CAPITAO": 224.2,
-"PRIMEIRO TENENTE": 224.2,
-"SEGUNDO TENENTE": 224.2,
-"ASPIRANTE": 224.2,
-"CADETE ULTIMO ANO": 224.2,
-"CADETE DEMAIS ANOS": 224.2,
-"SUBTENENTE": 224.2,
-"PRIMEIRO SARGENTO": 224.2,
-"SEGUNDO SARGENTO": 224.2,
-"TERCEIRO SARGENTO": 224.2,
-"CABO": 186.2,
-"SOLDADO PRIMEIRA CLASSE": 186.2,
-"SOLDADO SEGUNDA CLASSE": 186.2
-}
-,
-"BEL": {
-"CORONEL": 253.8,
-"TENENTE-CORONEL": 253.8,
-"MAJOR": 253.8,
-"CAPITAO": 212.4,
-"PRIMEIRO TENENTE": 212.4,
-"SEGUNDO TENENTE": 212.4,
-"ASPIRANTE": 212.4,
-"CADETE ULTIMO ANO": 212.4,
-"CADETE DEMAIS ANOS": 212.4,
-"SUBTENENTE": 212.4,
-"PRIMEIRO SARGENTO": 212.4,
-"SEGUNDO SARGENTO": 212.4,
-"TERCEIRO SARGENTO": 212.4,
-"CABO": 176.4,
-"SOLDADO PRIMEIRA CLASSE": 176.4,
-"SOLDADO SEGUNDA CLASSE": 176.4
-}
-,
-"FOR": {
-"CORONEL": 253.8,
-"TENENTE-CORONEL": 253.8,
-"MAJOR": 253.8,
-"CAPITAO": 212.4,
-"PRIMEIRO TENENTE": 212.4,
-"SEGUNDO TENENTE": 212.4,
-"ASPIRANTE": 212.4,
-"CADETE ULTIMO ANO": 212.4,
-"CADETE DEMAIS ANOS": 212.4,
-"SUBTENENTE": 212.4,
-"PRIMEIRO SARGENTO": 212.4,
-"SEGUNDO SARGENTO": 212.4,
-"TERCEIRO SARGENTO": 212.4,
-"CABO": 176.4,
-"SOLDADO PRIMEIRA CLASSE": 176.4,
-"SOLDADO SEGUNDA CLASSE": 176.4
-}
-,
-"POA": {
-"CORONEL": 253.8,
-"TENENTE-CORONEL": 253.8,
-"MAJOR": 253.8,
-"CAPITAO": 212.4,
-"PRIMEIRO TENENTE": 212.4,
-"SEGUNDO TENENTE": 212.4,
-"ASPIRANTE": 212.4,
-"CADETE ULTIMO ANO": 212.4,
-"CADETE DEMAIS ANOS": 212.4,
-"SUBTENENTE": 212.4,
-"PRIMEIRO SARGENTO": 212.4,
-"SEGUNDO SARGENTO": 212.4,
-"TERCEIRO SARGENTO": 212.4,
-"CABO": 176.4,
-"SOLDADO PRIMEIRA CLASSE": 176.4,
-"SOLDADO SEGUNDA CLASSE": 176.4
-}
-,
-"REC": {
-"CORONEL": 253.8,
-"TENENTE-CORONEL": 253.8,
-"MAJOR": 253.8,
-"CAPITAO": 212.4,
-"PRIMEIRO TENENTE": 212.4,
-"SEGUNDO TENENTE": 212.4,
-"ASPIRANTE": 212.4,
-"CADETE ULTIMO ANO": 212.4,
-"CADETE DEMAIS ANOS": 212.4,
-"SUBTENENTE": 212.4,
-"PRIMEIRO SARGENTO": 212.4,
-"SEGUNDO SARGENTO": 212.4,
-"TERCEIRO SARGENTO": 212.4,
-"CABO": 176.4,
-"SOLDADO PRIMEIRA CLASSE": 176.4,
-"SOLDADO SEGUNDA CLASSE": 176.4
-}
-,
-"SAL": {
-"CORONEL": 253.8,
-"TENENTE-CORONEL": 253.8,
-"MAJOR": 253.8,
-"CAPITAO": 212.4,
-"PRIMEIRO TENENTE": 212.4,
-"SEGUNDO TENENTE": 212.4,
-"ASPIRANTE": 212.4,
-"CADETE ULTIMO ANO": 212.4,
-"CADETE DEMAIS ANOS": 212.4,
-"SUBTENENTE": 212.4,
-"PRIMEIRO SARGENTO": 212.4,
-"SEGUNDO SARGENTO": 212.4,
-"TERCEIRO SARGENTO": 212.4,
-"CABO": 176.4,
-"SOLDADO PRIMEIRA CLASSE": 176.4,
-"SOLDADO SEGUNDA CLASSE": 176.4
-}
-,
-"SAO": {
-"CORONEL": 253.8,
-"TENENTE-CORONEL": 253.8,
-"MAJOR": 253.8,
-"CAPITAO": 212.4,
-"PRIMEIRO TENENTE": 212.4,
-"SEGUNDO TENENTE": 212.4,
-"ASPIRANTE": 212.4,
-"CADETE ULTIMO ANO": 212.4,
-"CADETE DEMAIS ANOS": 212.4,
-"SUBTENENTE": 212.4,
-"PRIMEIRO SARGENTO": 212.4,
-"SEGUNDO SARGENTO": 212.4,
-"TERCEIRO SARGENTO": 212.4,
-"CABO": 176.4,
-"SOLDADO PRIMEIRA CLASSE": 176.4,
-"SOLDADO SEGUNDA CLASSE": 176.4
-}
-,
-"CAP": {
-"CORONEL": 239.7,
-"TENENTE-CORONEL": 239.7,
-"MAJOR": 239.7,
-"CAPITAO": 200.6,
-"PRIMEIRO TENENTE": 200.6,
-"SEGUNDO TENENTE": 200.6,
-"ASPIRANTE": 200.6,
-"CADETE ULTIMO ANO": 200.6,
-"CADETE DEMAIS ANOS": 200.6,
-"SUBTENENTE": 200.6,
-"PRIMEIRO SARGENTO": 200.6,
-"SEGUNDO SARGENTO": 200.6,
-"TERCEIRO SARGENTO": 200.6,
-"CABO": 166.6,
-"SOLDADO PRIMEIRA CLASSE": 166.6,
-"SOLDADO SEGUNDA CLASSE": 166.6
-}
-,
-"DES": {
-"CORONEL": 211.5,
-"TENENTE-CORONEL": 211.5,
-"MAJOR": 211.5,
-"CAPITAO": 177,
-"PRIMEIRO TENENTE": 177,
-"SEGUNDO TENENTE": 177,
-"ASPIRANTE": 177,
-"CADETE ULTIMO ANO": 177,
-"CADETE DEMAIS ANOS": 177,
-"SUBTENENTE": 177,
-"PRIMEIRO SARGENTO": 177,
-"SEGUNDO SARGENTO": 177,
-"TERCEIRO SARGENTO": 177,
-"CABO": 147,
-"SOLDADO PRIMEIRA CLASSE": 147,
-"SOLDADO SEGUNDA CLASSE": 147
-}
-}
-
-
 //var militar_head = `<div class="form-row mil-`
+function rounddown(x) {
+    return Math.floor(x*100)/100
+}
+function parseMoney (x) {
+    return x.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})
+}
 function militar(n) {
 return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n}">
 				<div class="form-row col-md-11">
@@ -249,9 +43,10 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 				  <label for="cpf-${n}">CPF</label>
 				  <input type="text" id="cpf-${n}" name="cpf"  class="form-control cpf" required>
 				</div>
-				<div class="form-group col-md-2">
+				<div class="form-group col-md-2 ajudadecusto_var" style="display:none;">
 			  		<label for="acp-${n}">Adicional Cert. Profissional</label>
-			  		<select name="acp" class="form-control" id="acp-${n}" required>
+			  		<select name="acp" class="form-control" id="acp-${n}">
+					<option value="null"></option>
 					<option value=0>Sem ACP</option>
 					<option value=10>Formação (CFSD, CFO)</option>
 					<option value=25>Especialização (CESEI, CMAUT, SCI)</option>
@@ -260,11 +55,12 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 <!--			TODO: Aparecer apenas se pagar Ajuda de Custo-->
 			  		</select>
 				</div>
-				<div class="form-group col-md-2">
+				<div class="form-group col-md-2 ajudadecusto_var" style="display:none;">
 			  		<label for="dep-${n}">Viajará com Dependente?</label>
-			  		<select name="dep" class="form-control" id="dep-${n}" required>
-					<option value="True">SIM</option>
-					<option value="False">NÃO</option>
+			  		<select name="dep" class="form-control" id="dep-${n}">
+					<option value="null"></option>
+					<option value=1>SIM</option>
+					<option value=2>NÃO</option>
 <!--			TODO: Aparecer apenas se pagar Ajuda de Custo-->
 			  		</select>
 				</div>
@@ -291,9 +87,9 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 			}
 
 function diarias(l) {
+
     destino = document.getElementById('destino').value
     posto = document.getElementById("posto-"+String(l)).value
-
     qtde_diarias=document.getElementById('qtde_diarias').value
     diaria_val = diarias_nac[destino][posto]
     bruto = (Math.round(diaria_val*qtde_diarias*100)/100)
@@ -305,14 +101,49 @@ function diarias(l) {
         <td>${document.getElementById("matricula-"+String(l)).value}</td>
         <td>${document.getElementById("posto-"+String(l)).value}</td>
         <td>${document.getElementById("nome-"+String(l)).value}</td>
-        <td>R$ ${diaria_val.toFixed(2)}</td>
-        <td>R$ ${bruto.toFixed(2)}</td>
-        <td>R$ ${alim.toFixed(2)}</td>
-        <td>R$ ${liq.toFixed(2)}</td>
+        <td>R$ ${parseMoney(diaria_val)}</td>
+        <td>R$ ${parseMoney(bruto)}</td>
+        <td>R$ ${parseMoney(alim)}</td>
+        <td>R$ ${parseMoney(liq)}</td>
     </tr>
 </tbody>`
     );
 }
+
+function ajudadecusto(l) {
+
+    posto = document.getElementById("posto-"+String(l)).value;
+
+    if (ats[document.getElementById("posto-"+String(l)).value]==undefined) {
+        tempo_serv=0;
+    }
+    else {
+        tempo_serv=rounddown((parseFloat(ats[document.getElementById("posto-"+String(l)).value])/100)*
+                                parseFloat(remuneracao[posto]['soldo']));
+    }
+    cert_prof = rounddown((parseFloat(document.getElementById("acp-"+String(l)).value)/100)*
+                            parseFloat(remuneracao[posto]['soldo']));
+    remun =rounddown(parseFloat(remuneracao['gcef']) + parseFloat(remuneracao['grv']) +
+                parseFloat(remuneracao[posto]['soldo']) + parseFloat(remuneracao[posto]['vpe']) +
+                parseFloat(remuneracao[posto]['apg']) + parseFloat(remuneracao[posto]['aom']) +
+                parseFloat(remuneracao[posto]['gfr']) + tempo_serv + cert_prof)
+    ajuda_ida = remun*parseFloat(document.getElementById('ajudadecusto_ida').value)
+    ajuda_volta = remun*parseFloat(document.getElementById('ajudadecusto_volta').value)
+    return (
+`<tbody class="ajudadecusto-row">
+    <tr>
+        <td>${document.getElementById("matricula-"+String(l)).value}</td>
+        <td>${document.getElementById("posto-"+String(l)).value}</td>
+        <td>${document.getElementById("nome-"+String(l)).value}</td>
+        <td>R$ ${parseMoney(remun)}</td>
+        <td>R$ ${parseMoney(ajuda_ida)}</td>
+        <td>R$ ${parseMoney(ajuda_volta)}</td>
+        <td>R$ ${parseMoney(ajuda_ida + ajuda_volta)}</td>
+    </tr>
+</tbody>`
+    );
+}
+
 
 function financeiro(l) {
 //    posto = document.getElementById("posto-"+String(l));

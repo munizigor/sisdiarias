@@ -25,6 +25,7 @@
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"> </script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 		<script src="static/js/variaveis.js"></script>
+		<script src="static/js/diarias_data.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 </head>
 
@@ -47,7 +48,7 @@
 				</div>
 				<div class="form-group col-md-2">
 				  <label for="publ_of">Publicação (Boletim ou Nº SEI)</label>
-				  <input type="text" name="publ_of" maxlength="30" class="form-control" id="publ_of" required>
+				  <input type="text" name="publ_of" maxlength="30" class="form-control" id="publ_of" placeholder="BG XXX/XXXX" required>
 				</div>
 			</div>
 			<div class="form-row">
@@ -79,7 +80,7 @@
 				</div>
 				<div class="form-group col-md-2">
 				  <label for="missao">Classificação da Missão</label>
-				  <select name="missao" class="form-control" required id="missao">
+				  <select name="missao" class="form-control" required id="missao" onchange="calc_datas()">
 					<option value="True" selected>Eventual</option>
 					<option value="False">Não Eventual</option>
 	<!--			TODO: Definir parâmetros de cálculo e manipular classes 'diarias' e 'ajudadecusto' conforme TCDF-->
@@ -93,6 +94,8 @@
 				  <label for="qtde_diarias">Quantidade de Diárias</label>
 				  <input type="text" name="qtde_diarias" class="form-control" id="qtde_diarias" readonly>
 				</div>
+				<input type="hidden" id="ajudadecusto_ida"  value=0 />
+				<input type="hidden" id="ajudadecusto_volta"  value=0 />
 			</div>
 		</div>
 		<h2>DADOS DOS MILITARES</h2>
@@ -111,11 +114,10 @@
 			<button type="button" id="btn-exportar" onclick="javascript:exportar();" class="btn btn-dark">Exportar</button>
 			<button type="button" id="btn-gerarPDF" onclick="javascript:gerarPDF();" class="btn btn-dark">Gerar PDF</button>
 		</div>
-<!--		<div style="display:none;">-->
 			<div class="planilha" id="planilha" style="display:none;">
-			<div class="diarias table-responsive">
+			<div class="diarias" id="diarias_div">
 			<h3>DIÁRIAS</h3>
-				<table class="table" id="diarias">
+				<table class="table table-responsive" id="diarias">
 						<thead>
 							<tr>
 								<th>Matrícula</th>
@@ -137,7 +139,7 @@
 				<h3>PLANILHA DE PAGAMENTO MENSAL DE DIÁRIAS</h3>
 			</div>
 -->
-			<div class="ajudadecusto">
+			<div class="ajudadecusto" id="ajudadecusto_div">
 			<h3>AJUDA DE CUSTO</h3>
 				<!--			TODO: Desaparecer Ajuda de Custo caso não entre nas condiçoes-->
 				<table class="table table-responsive" id="ajudadecusto">
@@ -145,6 +147,7 @@
 							<tr>
 								<th>Matrícula</th>
 								<th>Posto/Graduação</th>
+								<th>Nome</th>
 								<th>Remuneração</th>
 								<th>Ajuda de Custo - Ida</th>
 								<th>Ajuda de Custo - Volta</th>
@@ -166,16 +169,6 @@
 								<th>Conta</th>
 							</tr>
 						</thead>
-<!--						<tbody>-->
-
-<!--							<tr>-->
-<!--								<td>JOÃO ALBERTO DOS SANTOS CARMO FERREIRA</td>-->
-<!--								<td>11111111111</td>-->
-<!--								<td>070</td>-->
-<!--								<td>2399</td>-->
-<!--								<td>1016670</td>-->
-<!--							</tr>-->
-<!--						</tbody>-->
 				</table>
 			</div>
 		</div>
