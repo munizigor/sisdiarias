@@ -114,11 +114,11 @@ function ajudadecusto(l) {
 
     posto = document.getElementById("posto-"+String(l)).value;
 
-    if (ats[document.getElementById("posto-"+String(l)).value]==undefined) {
+    if (ats[document.getElementById("matricula-"+String(l)).value]==undefined) {
         tempo_serv=0;
     }
     else {
-        tempo_serv=rounddown((parseFloat(ats[document.getElementById("posto-"+String(l)).value])/100)*
+        tempo_serv=rounddown((parseFloat(ats[document.getElementById("matricula-"+String(l)).value])/100)*
                                 parseFloat(remuneracao[posto]['soldo']));
     }
     cert_prof = rounddown((parseFloat(document.getElementById("acp-"+String(l)).value)/100)*
