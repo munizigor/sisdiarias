@@ -16,10 +16,6 @@ body {
 	height: calc(2rem + 1px);
 	font-size: .9rem;
 }
-.reduce-80{
-	    width: 80%;
-/* TODO: Remover espaço entre colunas */
-	}
 .botao-add{
    background: url("../img/add_row_icon.gif") no-repeat scroll 0 0;
    border:0;
@@ -91,9 +87,11 @@ border-left: 1px solid #ccc;
 div.calculos-excl {
 border-left: 1px solid #ccc;
 }
-h1 a {
-    padding-left: 15px;
-	color: #FCA205;
+h1 {
+	margin-bottom: 50px;
+	text-align:center;
+    padding-left: 25px;
+    margin-top: 15px;
 }
 h2 {
 	margin-bottom: 10px;
@@ -128,7 +126,6 @@ div.child{
 
 }
 div.content{
-  /*TODO: Montar um sidebar flutuante para aparecer aba cálculos*/
     margin-left: 20px;
     padding-right: 20px;
     padding-left: 20px;

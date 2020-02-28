@@ -1,4 +1,34 @@
-//var militar_head = `<div class="form-row mil-`
+//Mostrar texto Ajuda
+function mostrarmissao() {
+    var elem = document.getElementById("dadosgerais")
+    alerta = (`
+        <div class="alert alert-success" id='alertamissao'role="alert">
+			  <h4 class="alert-heading">Definição das missões (Conforme Decisão Ordinária TCDF 4663/2009)</h4>
+<p><b>EVENTUAL</b>: Missão <b>inferior a 30 dias</b>, que <b>não acarreta mudança de domicílio</b> do militar.
+<b>Não gera direito à percepção de ajuda de custo</b>, transporte de bagagem, veículo e dependentes;</p>
+
+<p><b>NÃO EVENTUAL</b>: Missão <b>igual ou superior a 30 dias</b>, que <b>acarreta a mudança de domicílio</b>
+do militar. <b>Gera direito à percepção de ajuda de custo</b>, transporte de bagagem, veículo e dependentes;</p>
+<h5>OBSERVAÇÕES:</h5>
+
+<p>1- Deve ser considerada como data de recebimento da ajuda de custo na ida o dia imediatamente anterior à data de
+início do evento que motivou o pagamento da ajuda de custo ao militar;</p>
+
+<p>2- A missão <b>superior a 30 dias e inferior a 60 dias</b> poderá ser classificada como <b>eventual ou não eventual
+</b>, mas, <b>em qualquer caso</b>, <b>não será cabível o pagamento cumulativo de diárias e ajuda de custo</b>;</p>
+
+<p>3- A missão <b>superior a 60 dias</b> poderá ser classificada como <b>eventual ou não eventual</b>, porém <b>só será
+cabível a percepção cumulativa de diárias e ajuda de custo caso a missão seja classificada como eventual, não gerando
+direito à percepção de transporte de bagagem, veículo e dependentes</b>;</p>
+		</div>
+			`)
+    elem.insertAdjacentHTML('beforeend', alerta);
+}
+
+function removermissao() {
+    document.getElementById("alertamissao").remove()
+}
+
 function rounddown(x) {
     return Math.floor(x*100)/100
 }
@@ -41,11 +71,11 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 				</div>
 				<div class="form-group col-md-2">
 				  <label for="cpf-${n}">CPF</label>
-				  <input type="text" id="cpf-${n}" name="cpf"  class="form-control cpf" required>
+				  <input type="text" id="cpf-${n}" name="cpf"  class="form-control cpf" onblur='ChecaCPF ("cpf-${n}")' required>
 				</div>
 				<div class="form-group col-md-2 ajudadecusto_var" style="display:none;">
 			  		<label for="acp-${n}">Adicional Cert. Profissional</label>
-			  		<select name="acp" class="form-control" id="acp-${n}">
+			  		<select name="acp" class="form-control ajudadecusto_var" id="acp-${n}">
 					<option value="null"></option>
 					<option value=0>Sem ACP</option>
 					<option value=10>Formação (CFSD, CFO)</option>
@@ -57,7 +87,7 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 				</div>
 				<div class="form-group col-md-2 ajudadecusto_var" style="display:none;">
 			  		<label for="dep-${n}">Viajará com Dependente?</label>
-			  		<select name="dep" class="form-control" id="dep-${n}">
+			  		<select name="dep" class="form-control ajudadecusto_var" id="dep-${n}">
 					<option value="null"></option>
 					<option value=1>SIM</option>
 					<option value=2>NÃO</option>
@@ -79,8 +109,8 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 				</div>
 				</div>
 				<div class="form-group col-md-1">
-					<input type="submit" class="botao-add" id="add-${n}" name="form.button.add" value="${n}" title="Adicionar linha">
-					<input type="submit" class="botao-del" id="del-${n}" name="form.button.del" value="${n}" title="Excluir linha">
+					<button class="botao-add" id="add-${n}" title="Adicionar linha">
+					<button class="botao-del" id="del-${n}" title="Excluir linha">
 				</div>
 			</div>
 			`);

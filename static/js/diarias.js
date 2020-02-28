@@ -62,13 +62,13 @@ function params_ajudacusto () {
     if (parseInt(document.getElementById('ajudadecusto_ida').value)==0 && parseInt(document.getElementById('ajudadecusto_volta').value)==0) {
         for (i=0;i<elems_ajudacusto.length;i++) {
             elems_ajudacusto[i].style.display='none';
-//            TODO: Zerar valores de acp e dependente se nao for calcular ajuda de custo
+            elems_ajudacusto[i].required = false;
         }
     }
     else {
         for (i=0;i<elems_ajudacusto.length;i++) {
             elems_ajudacusto[i].style.display='block';
-//            TODO: Inserir required como parametro se for caso de calculo
+            elems_ajudacusto[i].required = true;
         }
     }
     }
@@ -140,22 +140,26 @@ function params_ajudacusto () {
 
 //Início das Linhas de Militares
 
-        $("div.militares").on('click','input.botao-add', function(e) {
+        $("div.militares").on('click','button.botao-add', function(e) {
                 n+=1;
                 c+=1;
-//                TODO: Não está somando o 1. Verificar
                 var elem = document.getElementById("militares")
                 elem.insertAdjacentHTML('beforeend', militar(c));
                 //Sumir com ACP e Dependente se nao houver ajuda de custo
-                params_ajudacusto ()
+                params_ajudacusto ();
+//                listcpf = document.getElementsByName("cpf");
+                $(".cpf").mask("000.000.000-00");
+
             }
         );
-        $("div.militares").on('click','input.botao-del', function(e) {
+        $("div.militares").on('click','button.botao-del', function(e) {
                 if (n != 1) {
-                    document.getElementById("mil-"+this.value).remove();
+                    document.getElementById("mil-"+this.id.substring(4)).remove();
                     n-=1;
                     //Sumir com ACP e Dependente se nao houver ajuda de custo
-                    params_ajudacusto ()
+                    params_ajudacusto ();
+//                    listcpf = document.getElementsByName("cpf");
+                    $(".cpf").mask("000.000.000-00");
                     }
             }
         );
@@ -163,28 +167,22 @@ function params_ajudacusto () {
 //Fim das Linhas de Militares
 
 //Início das Funções
-//TODO: Terminar essa função
 //Verificar CPF
-var listcpf = document.getElementsByName("cpf")
-for (i=0;i<listcpf.length;i++) {
-    listcpf[i].addEventListener('blur', function () {
-//        if (typeof listcpf[i] != 'undefined'){
-            cpf = listcpf[i].value.replace(/[.-]/g,'');
+
+function ChecaCPF (id) {
+        cpf_elem = document.getElementById(id)
+            cpf = cpf_elem.value.replace(/[.-]/g,'');
             if (cpf!="") {
                     if (!TestaCPF(cpf)) {
                         alert("CPF Inválido. Digite o número correto");
-                        document.getElementById("cpf").style.color = "red";
-                        setTimeout(function () {document.getElementById("cpf").focus();},1);
+                        cpf_elem.style.color = "red";
+                        setTimeout(function () {cpf_value.focus();},1);
                     }
                     else {
-                    document.getElementById("cpf").style.color = "#495057";
+                    cpf_elem.style.color = "#495057";
                     }
             }
-//        }
     }
-    );
-}
-
 
 //Funçoes de calculos individuais
 function calc_ind(id) {
@@ -230,7 +228,7 @@ function calcular() {
 }
 
 function limpar() {
-    alert ("Limpar");
+    $(':input').val('');
 }
 
 function exportar() {

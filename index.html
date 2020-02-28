@@ -34,13 +34,35 @@
 
 
 	<div class="row topo-ini">
-		<a href="/">
+		<a href="index.html">
 			<p>Sistema de Cálculo de Diárias do CBMDF</p>
 		</a>
 	</div>
+
+	<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="index.html" id="navbarNac">Diárias Nacionais</a>
+					</li>
+					<li class="nav-item disabled">
+						<a class="nav-link disabled" href="#" id="navbarInt">Diárias Internacionais</a>
+<!--						TODO: cRIAR PAGINA INTERN.HTML PARA DIARIAS INTERNACIONAIS APOS CONCLUIR TODA LOGICA-->
+					</li>
+				</ul>
+			</div>
+	</nav>
+
+
 	<div class="content container">
+		<h1>DIÁRIAS NACIONAIS</h1>
+		<div class="dropdown-divider"></div>
 		<h2>DADOS GERAIS</h2>
-		<div class="border rounded">
+		<div class="border rounded" id="dadosgerais">
 		<div class="form-row">
 				<div class="form-group col-md-10">
 				  <label for="descricao">Descrição da Viagem</label>
@@ -78,12 +100,13 @@
 				  <label for="data_retorno">Data de Retorno pra Sede</label>
 				  <input type="text" name="data_retorno" class="form-control data" id="data_retorno" type=date required>
 				</div>
-				<div class="form-group col-md-2">
-				  <label for="missao">Classificação da Missão</label>
+				<div class="form-group col-md-2" onmouseover="mostrarmissao ()" onmouseout="removermissao ()">
+				  <label for="missao">Missão</label> <a
+						href="https://etcdf.tc.df.gov.br/?a=consultaETCDF&f=formPrincipal&edoc=D9F54FD2"
+						target="_blank">(Dec. TCDF 4663/2009)</a>
 				  <select name="missao" class="form-control" required id="missao" onchange="calc_datas()">
 					<option value="True" selected>Eventual</option>
 					<option value="False">Não Eventual</option>
-	<!--			TODO: Definir parâmetros de cálculo e manipular classes 'diarias' e 'ajudadecusto' conforme TCDF-->
 				  </select>
 				</div>
 				<div class="form-group col-md-2">
@@ -105,7 +128,6 @@
         		var c=1;
         		document.write(militar(n));
       		</script>
-<!--			TODO: Inserir label com Militar-->
 		</div>
 		</br>
 		<div style="text-align: center">
@@ -133,7 +155,6 @@
 				</table>
 				</div>
 			</div>
-	<!--			TODO: Calcular Diárias-->
 
 
 <!--				TODO: Calulo mensal de diarias
@@ -144,7 +165,6 @@
 			<div class="ajudadecusto" id="ajudadecusto_div">
 			<h3>AJUDA DE CUSTO</h3>
 				<div class="table-responsive">
-				<!--			TODO: Desaparecer Ajuda de Custo caso não entre nas condiçoes-->
 				<table class="table" id="ajudadecusto">
 						<thead>
 							<tr>
@@ -170,7 +190,6 @@
 <!--				</table>-->
 				</div>
 			</div>
-	<!--			TODO: Calcular Ajuda de Custo-->
 			<div class="financeiro">
 			<h3>DADOS FINANCEIROS</h3>
 				<div class="table-responsive">
