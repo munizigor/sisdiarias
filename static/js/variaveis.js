@@ -11,13 +11,10 @@ function mostrarmissao() {
 do militar. <b>Gera direito à percepção de ajuda de custo</b>, transporte de bagagem, veículo e dependentes;</p>
 <h5>OBSERVAÇÕES:</h5>
 
-<p>1- Deve ser considerada como data de recebimento da ajuda de custo na ida o dia imediatamente anterior à data de
-início do evento que motivou o pagamento da ajuda de custo ao militar;</p>
-
-<p>2- A missão <b>superior a 30 dias e inferior a 60 dias</b> poderá ser classificada como <b>eventual ou não eventual
+<p>1- A missão <b>superior a 30 dias e inferior a 60 dias</b> poderá ser classificada como <b>eventual ou não eventual
 </b>, mas, <b>em qualquer caso</b>, <b>não será cabível o pagamento cumulativo de diárias e ajuda de custo</b>;</p>
 
-<p>3- A missão <b>superior a 60 dias</b> poderá ser classificada como <b>eventual ou não eventual</b>, porém <b>só será
+<p>2- A missão <b>superior a 60 dias</b> poderá ser classificada como <b>eventual ou não eventual</b>, porém <b>só será
 cabível a percepção cumulativa de diárias e ajuda de custo caso a missão seja classificada como eventual, não gerando
 direito à percepção de transporte de bagagem, veículo e dependentes</b>;</p>
 		</div>
@@ -27,6 +24,15 @@ direito à percepção de transporte de bagagem, veículo e dependentes</b>;</p>
 
 function removermissao() {
     document.getElementById("alertamissao").remove()
+}
+
+function cotarpassagem() {
+    if (document.getElementById("passagem_bool").checked) {
+    document.getElementById("div_passagem").style.display='block';
+    }
+    else {
+    document.getElementById("div_passagem").style.display='none';
+    }
 }
 
 function rounddown(x) {

@@ -117,10 +117,18 @@
 				  <label for="qtde_diarias">Quantidade de Diárias</label>
 				  <input type="text" name="qtde_diarias" class="form-control" id="qtde_diarias" readonly>
 				</div>
+
 				<input type="hidden" id="ajudadecusto_ida"  value=0 />
 				<input type="hidden" id="ajudadecusto_volta"  value=0 />
 			</div>
 		</div>
+		</br>
+		</br>
+		<div class="form-check">
+		  <input type="checkbox" name="passagem_bool" class="form-check-input" id="passagem_bool" onclick="cotarpassagem ()" >
+		  <label for="passagem_bool">Cotar Passagens</label>
+		</div>
+
 		<h2>DADOS DOS MILITARES</h2>
 		<div class="militares" id="militares">
 			<script type="text/javascript">
@@ -136,6 +144,20 @@
 			<button type="button" id="btn-exportar" onclick="javascript:exportar();" class="btn btn-dark">Exportar</button>
 			<button type="button" id="btn-gerarPDF" onclick="javascript:gerarPDF();" class="btn btn-dark">Gerar PDF</button>
 		</div>
+		</br>
+		<div id="div_passagem"
+		  style="display:none;"
+		  data-skyscanner-widget="FlightSearchWidget"
+		  data-locale="pt-BR"
+		  data-market="BR"
+		  data-currency="BRL"
+		  data-origin-name="'Brasília'"
+		  data-flights-cabin-classes="false"
+		  data-target="passagem"
+		  data-flight-type="return"
+		></div>
+<script src="https://widgets.skyscanner.net/widget-server/js/loader.js" async></script>
+<script src="https://widgets.skyscanner.net/widget-server/js/loader.js" async></script>
 			<div class="planilha" id="planilha" style="display:none;">
 			<div class="diarias" id="diarias_div">
 			<h3>DIÁRIAS</h3>
@@ -206,6 +228,8 @@
 				</table>
 				</div>
 			</div>
+		<iframe name="passagem">
+		</iframe>
 		</div>
 	</div>
 	<footer>
