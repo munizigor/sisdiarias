@@ -124,10 +124,6 @@
 		</div>
 		</br>
 		</br>
-		<div class="form-check">
-		  <input type="checkbox" name="passagem_bool" class="form-check-input" id="passagem_bool" onclick="cotarpassagem ()" >
-		  <label for="passagem_bool">Cotar Passagens</label>
-		</div>
 
 		<h2>DADOS DOS MILITARES</h2>
 		<div class="militares" id="militares">
@@ -138,6 +134,28 @@
       		</script>
 		</div>
 		</br>
+		<div class="form-check">
+		  <input type="checkbox" name="passagem_bool" class="form-check-input" id="passagem_bool" onclick="cotarpassagem ()" >
+			<b><label for="passagem_bool">Cotar Passagens</label></b>
+		</div>
+		<div  style="display:none;" id="div_passagem">
+		<h2>PASSAGENS AÉREAS</h2>
+		<div class="border rounded"
+		  data-skyscanner-widget="FlightSearchWidget"
+		  data-locale="pt-BR"
+		  data-market="BR"
+		  data-currency="BRL"
+		  data-origin-name="'Brasília'"
+		  data-flights-cabin-classes="false"
+		  data-target="_blank"
+		  data-flight-type="return"
+		  data-flights-max-children-number="0"
+		 data-powered-by-logo-colour="light"
+		></div>
+		</br>
+		<script src="https://widgets.skyscanner.net/widget-server/js/loader.js" async></script>
+		</div>
+		</br>
 		<div style="text-align: center">
 			<button type="button" id="btn-calcular" onclick="javascript:calcular();" class="btn btn-dark">Calcular</button>
 			<button type="button" id="btn-limpar" onclick="javascript:limpar();"class="btn btn-dark">Limpar</button>
@@ -145,19 +163,6 @@
 			<button type="button" id="btn-gerarPDF" onclick="javascript:gerarPDF();" class="btn btn-dark">Gerar PDF</button>
 		</div>
 		</br>
-		<div id="div_passagem"
-		  style="display:none;"
-		  data-skyscanner-widget="FlightSearchWidget"
-		  data-locale="pt-BR"
-		  data-market="BR"
-		  data-currency="BRL"
-		  data-origin-name="'Brasília'"
-		  data-flights-cabin-classes="false"
-		  data-target="passagem"
-		  data-flight-type="return"
-		></div>
-<script src="https://widgets.skyscanner.net/widget-server/js/loader.js" async></script>
-<script src="https://widgets.skyscanner.net/widget-server/js/loader.js" async></script>
 			<div class="planilha" id="planilha" style="display:none;">
 			<div class="diarias" id="diarias_div">
 			<h3>DIÁRIAS</h3>

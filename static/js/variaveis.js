@@ -27,12 +27,18 @@ function removermissao() {
 }
 
 function cotarpassagem() {
+//    if (!checar_campos()) {
+    if (false) {
+        return;
+    }
+    else{
     if (document.getElementById("passagem_bool").checked) {
     document.getElementById("div_passagem").style.display='block';
     }
     else {
     document.getElementById("div_passagem").style.display='none';
     }
+}
 }
 
 function rounddown(x) {
