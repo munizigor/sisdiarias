@@ -1,3 +1,29 @@
+ function loadBancos() {
+    bancos_url = "https://raw.githubusercontent.com/guibranco/BancosBrasileiros/master/bancos.json"
+    temp = $.getJSON(bancos_url)
+    temp=temp.responseJSON
+    var bancos = {};
+//TODO: pENDENTE O AUTOCOMPLETE
+    Object.keys(temp).forEach(function(item) {
+      bancos[temp[item]["Code"]+" - "+temp[item]["Name"]]=temp[item];
+    })
+    return bancos;
+ }
+
+    $(function() {
+        $("#banco-1").autocomplete({
+        source: loadBancos(),
+        select: function (event, ui) { //item selected
+        AutoCompleteSelectHandler(event, ui)
+        },
+        minLength: 3,
+        });
+    });
+
+        function AutoCompleteSelectHandler(event, ui) {
+            var selectedObj = ui.item;
+        }
+
 diarias_nac={
   "BSB": {
     "CORONEL": 267.9,

@@ -90,7 +90,7 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 			  		<select name="acp" class="form-control ajudadecusto_var" id="acp-${n}">
 					<option value="null"></option>
 					<option value=0>Sem ACP</option>
-					<option value=10>Formação (CFSD, CFO)</option>
+					<option value=10>Formação (CFSD, CFO, CHO)</option>
 					<option value=25>Especialização (CESEI, CMAUT, SCI)</option>
 					<option value=45>Aperfeiçoamento (CAP, CAO)</option>
 					<option value=75>Altos Estudos (CAEP, CAEO)</option>

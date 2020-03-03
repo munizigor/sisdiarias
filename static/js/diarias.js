@@ -80,6 +80,7 @@ function params_ajudacusto () {
         difftempo = Math.abs(toDate('data_retorno')-toDate('data_saida'));
         diffdias = Math.ceil(difftempo/(1000 * 60 * 60 * 24))+1;
         document.getElementById('qtde_dias').value = diffdias
+
 //Parametros de diarias
 
         if ((diffdias<30)) {
@@ -131,6 +132,21 @@ function params_ajudacusto () {
         }
 //Sumir com ACP e Dependente se nao houver ajuda de custo
         params_ajudacusto ()
+    //Parametros de Tipo de Missão
+        if ((diffdias<30)) {
+            document.getElementById('missao').value = 'True'
+            document.getElementById('missao').setAttribute('disabled', true);
+        }
+        else {
+            document.getElementById('missao').removeAttribute('disabled');
+        }
+//TODO: fazer  document.getElementById('missao').value = 'False' p/ (diffdias>=30 && diffdias<60) e True para resto, mas permitindo alterar no select
+//         else if (diffdias>=30 && diffdias<60) {
+//            document.getElementById('missao').value = 'False'
+//        }
+//        else {
+//            document.getElementById('missao').value = 'True'
+//        }
     }
     }
 
