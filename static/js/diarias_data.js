@@ -1,12 +1,13 @@
  function loadBancos() {
     var bancos = []
+    banco_url = "https://gist.githubusercontent.com/antoniopresto/d73888dab087ae35a7cf41a61d8a3cbc/raw/43c94b305367afa82734f6fb4480f55e77e08a6e/banco_codigo.json"
     $.ajax({
       dataType: "json",
-      url: "https://raw.githubusercontent.com/guibranco/BancosBrasileiros/master/bancos.json"
+      url: banco_url
     })
     .done(function (data){
               Object.keys(data).forEach(function(item) {
-            bancos[item]=data[item]["Code"]+" - "+data[item]["Name"]
+            bancos[item]=data[item]["value"]+" - "+data[item]["label"]
         })
     })
     return bancos;
