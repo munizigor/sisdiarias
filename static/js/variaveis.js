@@ -1,3 +1,13 @@
+//Imprimir
+
+function imprimir() {
+      var mywindow = window.open('template.html', '','height=400,width=600');
+      mywindow.focus();
+      setTimeout(function(){mywindow.print();mywindow.close();},1000);
+
+      return true;
+}
+
 //Mostrar texto Ajuda
 function mostrarmissao() {
     var elem = document.getElementById("dadosgerais")
