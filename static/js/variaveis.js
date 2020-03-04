@@ -14,7 +14,7 @@ cabecalho = `
 <div class="form-group col-md-1">
 	<img src="static/img/brasao.png" alt="Brasao" height="120" width="120">
 </div>
-<div class="form-group" >
+<div class="form-group col-md-10" >
 <h6>CORPO DE BOMBEIROS MILITAR DO DISTRITO FEDERAL</h6>
 <h6>DEPARTAMENTO DE RECURSOS HUMANOS</h6>
 <h6>DIRETORIA DE GESTÃO DE PESSOAL</h6>
@@ -23,6 +23,9 @@ cabecalho = `
 </div>
 </br>
 <div class="dropdown-divider"></div>
+<h3><b>PLANILHA DE CÁLCULO DE DÍARIAS E AJUDA DE CUSTO</b></h3>
+</br>
+</br>
 `
     var mywindow = window.open('', 'PRINT','height=400,width=600');
     mywindow.document.write('<html><head><title>Planilha de Pagamento - Diárias</title>');
