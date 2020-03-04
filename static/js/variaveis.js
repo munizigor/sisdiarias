@@ -1,22 +1,40 @@
 //Imprimir
 
 function imprimir() {
+//				TODO: Colocar cabeçalho e brasão
 style = `
 		<meta charset="utf-8" >
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" href="static/css/base.css">
 `
+
+cabecalho = `
+</br>
+<div class="form-row">
+<div class="form-group col-md-1">
+	<img src="static/img/brasao.png" alt="Brasao" height="120" width="120">
+</div>
+<div class="form-group" >
+<h6>CORPO DE BOMBEIROS MILITAR DO DISTRITO FEDERAL</h6>
+<h6>DEPARTAMENTO DE RECURSOS HUMANOS</h6>
+<h6>DIRETORIA DE GESTÃO DE PESSOAL</h6>
+<h6>SEÇÃO DE PAGAMENTO DE PESSOAL</h6>
+</div>
+</div>
+</br>
+<div class="dropdown-divider"></div>
+`
     var mywindow = window.open('', 'PRINT','height=400,width=600');
-    mywindow.document.write('<html><head><title>Sistema de Cálculo de Diárias e Ajuda de Custo do CBMDF</title>');
+    mywindow.document.write('<html><head><title>Planilha de Pagamento - Diárias</title>');
     mywindow.document.write(style)
     mywindow.document.write('</head><body>');
-
+    mywindow.document.write(cabecalho)
       h=document.getElementById('planilha').outerHTML
       mywindow.document.write(h)
       mywindow.document.write('</body></html>');
       mywindow.focus();
       setTimeout(function(){mywindow.print();},1000);
-
+//				TODO: Retirar página em branco da impressao
       return true;
 }
 
@@ -110,10 +128,11 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 				  <input type="text" id="cpf-${n}" name="cpf"  class="form-control cpf" onblur='ChecaCPF ("cpf-${n}")' required>
 				</div>
 				<div class="form-group col-md-2 ajudadecusto_var" style="display:none;">
+//				TODO: Explicar como preencher
 			  		<label for="acp-${n}">Adicional Cert. Profissional</label>
 			  		<select name="acp" class="form-control ajudadecusto_var" id="acp-${n}">
 					<option value="null"></option>
-					<option value=0>Sem ACP</option>
+					<option value=0>Sem Capacitação</option>
 					<option value=10>Formação (CFSD, CFO, CHO)</option>
 					<option value=25>Especialização (CESEI, CMAUT, SCI)</option>
 					<option value=45>Aperfeiçoamento (CAP, CAO)</option>
@@ -131,8 +150,8 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 			  		</select>
 				</div>
 				<div class="form-group col-md-3">
+//				TODO: alert INFORMANDO QUE NÃO PODE SER CONTA SALÁRIO E QUE PODE SER QUALQUER conta
 				  <label for="banco-${n}">Banco</label>
-		<!--			TODO: Usar https://raw.githubusercontent.com/guibranco/BancosBrasileiros/master/bancos.json como fonte de pesquisa-->
 				  <input type="text" id="banco-${n}" name="banco" class="form-control banco" required>
 				</div>
 				<div class="form-group col-md-1">
@@ -244,7 +263,7 @@ dados_str= (`
 <li class="list-inline-item"><b>Descrição da Viagem:</b> ${document.getElementById("descricao").value.toUpperCase()}</li>
 </ul>
 <ul class="list-inline">
-<li class="list-inline-item"><b>Publicação:</b> ${document.getElementById("publ_of").value.toUpperCase()}</li>
+<li class="list-inline-item"><b>Boletim Geral ou SEI:</b> ${document.getElementById("publ_of").value.toUpperCase()}</li>
 <li class="list-inline-item"><b>Destino:</b> ${destino.options[destino.selectedIndex].text.toUpperCase()}</li>
 </ul>
 <ul class="list-inline">
