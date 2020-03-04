@@ -11,13 +11,11 @@ style = `
     mywindow.document.write(style)
     mywindow.document.write('</head><body>');
 
-      //TODO: FINALIZAR LOGICA ABAIXO
       h=document.getElementById('planilha').outerHTML
-      console.log(mywindow.document.head)
       mywindow.document.write(h)
       mywindow.document.write('</body></html>');
       mywindow.focus();
-      setTimeout(function(){mywindow.print();mywindow.close();},1000);
+      setTimeout(function(){mywindow.print();},1000);
 
       return true;
 }
@@ -71,6 +69,8 @@ function rounddown(x) {
 function parseMoney (x) {
     return x.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})
 }
+
+
 function militar(n) {
 return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n}">
 				<div class="form-row col-md-11">
@@ -82,7 +82,7 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 				  <label for="posto-${n}">Posto/Grad</label>
 				  <select name="posto" class="form-control" required id="posto-${n}">
 					 <option value="null"></option>
-					  <!--TODO: Adicionar Cmt Geral. Aqui e no JSON-->
+					 <option value="CEL CMT-GERAL">CEL CMT-GERAL</option>
 					 <option value="CORONEL">CEL</option>
 					 <option value="TENENTE-CORONEL">TC</option>
 					 <option value="MAJOR">MAJ</option>
@@ -133,7 +133,7 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 				<div class="form-group col-md-3">
 				  <label for="banco-${n}">Banco</label>
 		<!--			TODO: Usar https://raw.githubusercontent.com/guibranco/BancosBrasileiros/master/bancos.json como fonte de pesquisa-->
-				  <input type="text" id="banco-${n}" name="banco" class="form-control" required>
+				  <input type="text" id="banco-${n}" name="banco" class="form-control banco" required>
 				</div>
 				<div class="form-group col-md-1">
 				  <label for="agencia-${n}">Agência</label>
@@ -179,7 +179,9 @@ function diarias(l) {
 function ajudadecusto(l) {
 
     posto = document.getElementById("posto-"+String(l)).value;
-
+    if (posto == "CEL CMT-GERAL") {
+        posto ="CORONEL";
+    }
     if (ats[document.getElementById("matricula-"+String(l)).value]==undefined) {
         tempo_serv=0;
     }
@@ -195,6 +197,11 @@ function ajudadecusto(l) {
                 parseFloat(remuneracao[posto]['gfr']) + tempo_serv + cert_prof)
     ajuda_ida = remun*parseFloat(document.getElementById('ajudadecusto_ida').value)
     ajuda_volta = remun*parseFloat(document.getElementById('ajudadecusto_volta').value)
+    if (parseInt(document.getElementById("dep-"+String(l)).value)==2) {
+    ajuda_ida = ajuda_ida/2
+    ajuda_volta = ajuda_volta/2
+    }
+    dep = document.getElementById("dep-"+String(l))
     return (
 `<tbody class="ajudadecusto-row">
     <tr>
@@ -202,6 +209,7 @@ function ajudadecusto(l) {
         <td>${document.getElementById("posto-"+String(l)).value}</td>
         <td>${document.getElementById("nome-"+String(l)).value.toUpperCase()}</td>
         <td>R$ ${parseMoney(remun)}</td>
+        <td>${dep.options[dep.selectedIndex].text.toUpperCase()}</td>
         <td>R$ ${parseMoney(ajuda_ida)}</td>
         <td>R$ ${parseMoney(ajuda_volta)}</td>
         <td>R$ ${parseMoney(ajuda_ida + ajuda_volta)}</td>
@@ -230,7 +238,6 @@ function financeiro(l) {
 function dadosgerais() {
 destino = document.getElementById("destino")
 missao = document.getElementById("missao")
-//TODO: FORMATAR CAMPO - https://getbootstrap.com/docs/4.0/content/typography/
 dados_str= (`
 <div id='dadosgerais-row'>
 <ul class="list-inline">
@@ -249,7 +256,7 @@ dados_str= (`
 <li class="list-inline-item"><b>Dias de Afastamento:</b> ${document.getElementById("qtde_dias").value}</li>
 </ul>
 <ul class="list-inline">
-<li class="list-inline-item"><b>Quantidade de Diárias:</b> ${document.getElementById("qtde_diarias").value}</li>
+<li class="list-inline-item"><b>Quantidade de Diárias:</b> ${parseFloat(document.getElementById("qtde_diarias").value).toLocaleString()}</li>
 </ul>
 <ul class="list-inline">
 <li class="list-inline-item"><b>Ajuda de Custo - Ida:</b> ${document.getElementById("ajudadecusto_ida").value}</li>

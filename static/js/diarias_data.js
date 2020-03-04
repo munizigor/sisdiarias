@@ -13,15 +13,20 @@
     return bancos;
  }
 
+ bancos = loadBancos()
+
+ function banco_autocomplete () {
     $(function() {
-        $("#banco-1").autocomplete({
-        source: loadBancos(),
+        $(".banco").autocomplete({
+        source: bancos,
         minLength: 2,
         });
     });
+    }
 
 diarias_nac={
   "BSB": {
+    "CEL CMT-GERAL": 406.7,
     "CORONEL": 267.9,
     "TENENTE-CORONEL": 267.9,
     "MAJOR": 267.9,
@@ -41,6 +46,7 @@ diarias_nac={
   }
 ,
 "MAN": {
+"CEL CMT-GERAL": 406.7,
 "CORONEL": 267.9,
 "TENENTE-CORONEL": 267.9,
 "MAJOR": 267.9,
@@ -60,6 +66,7 @@ diarias_nac={
 }
 ,
 "RIO": {
+"CEL CMT-GERAL": 406.7,
 "CORONEL": 267.9,
 "TENENTE-CORONEL": 267.9,
 "MAJOR": 267.9,
@@ -79,6 +86,7 @@ diarias_nac={
 }
 ,
 "BEL": {
+"CEL CMT-GERAL": 386.37,
 "CORONEL": 253.8,
 "TENENTE-CORONEL": 253.8,
 "MAJOR": 253.8,
@@ -98,6 +106,7 @@ diarias_nac={
 }
 ,
 "FOR": {
+"CEL CMT-GERAL": 386.37,
 "CORONEL": 253.8,
 "TENENTE-CORONEL": 253.8,
 "MAJOR": 253.8,
@@ -117,6 +126,7 @@ diarias_nac={
 }
 ,
 "POA": {
+"CEL CMT-GERAL": 386.37,
 "CORONEL": 253.8,
 "TENENTE-CORONEL": 253.8,
 "MAJOR": 253.8,
@@ -136,6 +146,7 @@ diarias_nac={
 }
 ,
 "REC": {
+"CEL CMT-GERAL": 386.37,
 "CORONEL": 253.8,
 "TENENTE-CORONEL": 253.8,
 "MAJOR": 253.8,
@@ -155,6 +166,7 @@ diarias_nac={
 }
 ,
 "SAL": {
+"CEL CMT-GERAL": 386.37,
 "CORONEL": 253.8,
 "TENENTE-CORONEL": 253.8,
 "MAJOR": 253.8,
@@ -174,6 +186,7 @@ diarias_nac={
 }
 ,
 "SAO": {
+"CEL CMT-GERAL": 386.37,
 "CORONEL": 253.8,
 "TENENTE-CORONEL": 253.8,
 "MAJOR": 253.8,
@@ -193,6 +206,7 @@ diarias_nac={
 }
 ,
 "CAP": {
+"CEL CMT-GERAL": 364.0,
 "CORONEL": 239.7,
 "TENENTE-CORONEL": 239.7,
 "MAJOR": 239.7,
@@ -212,6 +226,7 @@ diarias_nac={
 }
 ,
 "DES": {
+"CEL CMT-GERAL": 321.29,
 "CORONEL": 211.5,
 "TENENTE-CORONEL": 211.5,
 "MAJOR": 211.5,

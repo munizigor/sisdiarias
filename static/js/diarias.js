@@ -165,6 +165,7 @@ function params_ajudacusto () {
                 params_ajudacusto ();
 //                listcpf = document.getElementsByName("cpf");
                 $(".cpf").mask("000.000.000-00");
+                setTimeout(banco_autocomplete (),500)
 
             }
         );
@@ -226,7 +227,9 @@ function calcular() {
     t=document.getElementsByClassName("militares-row");
     calc_ind('financeiro')
     calc_ind('diarias')
+//    TODO: Calcular soma diarias
     calc_ind('ajudadecusto')
+//    TODO: Calcular soma ajuda de custo
 //Aparecer/desaparecer div diarias
     if (parseFloat(document.getElementById('qtde_diarias').value)==0) {
         document.getElementById('diarias_div').style.display='none';
