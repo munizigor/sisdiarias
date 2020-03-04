@@ -159,11 +159,14 @@
 		<div style="text-align: center">
 			<button type="button" id="btn-calcular" onclick="javascript:calcular();" class="btn btn-dark">Calcular</button>
 			<button type="button" id="btn-limpar" onclick="javascript:limpar();"class="btn btn-dark">Limpar</button>
-			<button type="button" id="btn-exportar" onclick="javascript:exportar();" class="btn btn-dark">Exportar</button>
-			<button type="button" id="btn-gerarPDF" onclick="javascript:gerarPDF();" class="btn btn-dark">Gerar PDF</button>
+			<button type="button" id="btn-gerarPDF" onclick="javascript:gerarPDF();" class="btn btn-dark">Imprimir</button>
 		</div>
 		</br>
 			<div class="planilha" id="planilha" style="display:none;">
+			<div id="dadosgerais_div">
+			<h3>DADOS GERAIS</h3>
+
+			</div>
 			<div class="diarias" id="diarias_div">
 			<h3>DIÁRIAS</h3>
 				<div class="table-responsive">
@@ -205,16 +208,6 @@
 							</tr>
 						</thead>
 				</table>
-<!--				<table class="table">-->
-<!--					<thead>-->
-<!--						<tr>-->
-<!--							<td colspan="4"> Total</td>-->
-<!--							<td>55</td>-->
-<!--							<td>44</td>-->
-<!--							<td>33</td>-->
-<!--						</tr>-->
-<!--					</thead>-->
-<!--				</table>-->
 				</div>
 			</div>
 			<div class="financeiro">

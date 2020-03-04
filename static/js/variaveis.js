@@ -2,6 +2,10 @@
 
 function imprimir() {
       var mywindow = window.open('template.html', '','height=400,width=600');
+      //TODO: FINALIZAR LOGICA ABAIXO
+      h=document.getElementById('planilha')
+      p=mywindow.document.getElementById('planilha_tmp')
+      p.insertAdjacentElement("afterbegin",h)
       mywindow.focus();
       setTimeout(function(){mywindow.print();mywindow.close();},1000);
 
@@ -152,7 +156,7 @@ function diarias(l) {
     <tr>
         <td>${document.getElementById("matricula-"+String(l)).value}</td>
         <td>${document.getElementById("posto-"+String(l)).value}</td>
-        <td>${document.getElementById("nome-"+String(l)).value}</td>
+        <td>${document.getElementById("nome-"+String(l)).value.toUpperCase()}</td>
         <td>R$ ${parseMoney(diaria_val)}</td>
         <td>R$ ${parseMoney(bruto)}</td>
         <td>R$ ${parseMoney(alim)}</td>
@@ -186,7 +190,7 @@ function ajudadecusto(l) {
     <tr>
         <td>${document.getElementById("matricula-"+String(l)).value}</td>
         <td>${document.getElementById("posto-"+String(l)).value}</td>
-        <td>${document.getElementById("nome-"+String(l)).value}</td>
+        <td>${document.getElementById("nome-"+String(l)).value.toUpperCase()}</td>
         <td>R$ ${parseMoney(remun)}</td>
         <td>R$ ${parseMoney(ajuda_ida)}</td>
         <td>R$ ${parseMoney(ajuda_volta)}</td>
@@ -203,12 +207,47 @@ function financeiro(l) {
     return (
 `<tbody class="financeiro-row">
     <tr>
-        <td>${document.getElementById("nome-"+String(l)).value}</td>
+        <td>${document.getElementById("nome-"+String(l)).value.toUpperCase()}</td>
         <td>${document.getElementById("cpf-"+String(l)).value}</td>
-        <td>${document.getElementById("banco-"+String(l)).value}</td>
-        <td>${document.getElementById("agencia-"+String(l)).value}</td>
-        <td>${document.getElementById("conta-"+String(l)).value}</td>
+        <td>${document.getElementById("banco-"+String(l)).value.toUpperCase()}</td>
+        <td>${document.getElementById("agencia-"+String(l)).value.toUpperCase()}</td>
+        <td>${document.getElementById("conta-"+String(l)).value.toUpperCase()}</td>
     </tr>
 </tbody>`
     );
+}
+
+function dadosgerais() {
+destino = document.getElementById("destino")
+missao = document.getElementById("missao")
+//TODO: FORMATAR CAMPO - https://getbootstrap.com/docs/4.0/content/typography/
+dados_str= (`
+<div id='dadosgerais-row'>
+<ul class="list-inline">
+<li class="list-inline-item"><b>Descrição da Viagem:</b> ${document.getElementById("descricao").value.toUpperCase()}</li>
+</ul>
+<ul class="list-inline">
+<li class="list-inline-item"><b>Publicação:</b> ${document.getElementById("publ_of").value.toUpperCase()}</li>
+<li class="list-inline-item"><b>Destino:</b> ${destino.options[destino.selectedIndex].text.toUpperCase()}</li>
+</ul>
+<ul class="list-inline">
+<li class="list-inline-item"><b>Data de Saída da Sede:</b> ${document.getElementById("data_saida").value}</li>
+<li class="list-inline-item"><b>Data de Retorno pra Sede:</b> ${document.getElementById("data_retorno").value}</li>
+</ul>
+<ul class="list-inline">
+<li class="list-inline-item"><b>Missão:</b> ${missao.options[missao.selectedIndex].text.toUpperCase()}</li>
+<li class="list-inline-item"><b>Dias de Afastamento:</b> ${document.getElementById("qtde_dias").value}</li>
+</ul>
+<ul class="list-inline">
+<li class="list-inline-item"><b>Quantidade de Diárias:</b> ${document.getElementById("qtde_diarias").value}</li>
+</ul>
+<ul class="list-inline">
+<li class="list-inline-item"><b>Ajuda de Custo - Ida:</b> ${document.getElementById("ajudadecusto_ida").value}</li>
+<li class="list-inline-item"><b>Ajuda de Custo - Volta:</b> ${document.getElementById("ajudadecusto_volta").value}</li>
+</ul>
+</div>
+`)
+
+elem=document.getElementById('dadosgerais_div')
+elem.insertAdjacentHTML("beforeend", dados_str)
 }

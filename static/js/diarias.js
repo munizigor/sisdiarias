@@ -219,12 +219,16 @@ function calcular() {
     }
     else{
     document.getElementById('planilha').style.display='block';
+    if (document.getElementById('dadosgerais-row')!=null) {
+        document.getElementById('dadosgerais-row').remove()
+    }
+    dadosgerais()
     t=document.getElementsByClassName("militares-row");
     calc_ind('financeiro')
     calc_ind('diarias')
     calc_ind('ajudadecusto')
 //Aparecer/desaparecer div diarias
-    if (parseInt(document.getElementById('qtde_diarias').value)==0) {
+    if (parseFloat(document.getElementById('qtde_diarias').value)==0) {
         document.getElementById('diarias_div').style.display='none';
     }
     else {
@@ -254,6 +258,6 @@ function exportar() {
 
 function gerarPDF() {
     calcular()
-    alert ("Gerar PDF");
+    imprimir ()
 }
 //Término das Funções
