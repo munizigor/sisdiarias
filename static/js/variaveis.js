@@ -1,11 +1,21 @@
 //Imprimir
 
 function imprimir() {
-      var mywindow = window.open('template.html', '','height=400,width=600');
+style = `
+		<meta charset="utf-8" >
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="static/css/base.css">
+`
+    var mywindow = window.open('', 'PRINT','height=400,width=600');
+    mywindow.document.write('<html><head><title>Sistema de Cálculo de Diárias e Ajuda de Custo do CBMDF</title>');
+    mywindow.document.write(style)
+    mywindow.document.write('</head><body>');
+
       //TODO: FINALIZAR LOGICA ABAIXO
-      h=document.getElementById('planilha')
-      p=mywindow.document.getElementById('planilha_tmp')
-      p.insertAdjacentElement("afterbegin",h)
+      h=document.getElementById('planilha').outerHTML
+      console.log(mywindow.document.head)
+      mywindow.document.write(h)
+      mywindow.document.write('</body></html>');
       mywindow.focus();
       setTimeout(function(){mywindow.print();mywindow.close();},1000);
 
