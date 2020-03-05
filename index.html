@@ -76,6 +76,7 @@
 			<div class="form-row">
 				<div class="form-group col-md-2">
 				  <label for="destino">Destino</label>
+<!--					TODO: Inserir possibilidade de múltiplos destinos (ex: Viagem CFO)-->
 				  <select name="destino" class="form-control" required id="destino">
 					<option value="null"></option>
 	<!--				<option value="BSB">Brasília</option>-->
@@ -97,6 +98,7 @@
 				  <input type="text" name="data_saida" class="form-control data" id="data_saida" type=date required onblur="calc_datas()">
 				</div>
 				<div class="form-group col-md-2">
+<!--	TODO:				Verificar se data saída é menor quedata retorno-->
 				  <label for="data_retorno">Data de Chegada na Sede</label>
 				  <input type="text" name="data_retorno" class="form-control data" id="data_retorno" type=date required onblur="calc_datas()">
 				</div>
@@ -141,6 +143,7 @@
 			<b><label for="passagem_bool">Cotar Passagens</label></b>
 		</div>
 		<div  style="display:none;" id="div_passagem">
+<!--			TODO: inserir um link com parâmetros GET que direciona para uma pesquisa ao vivo do valor das passagens-->
 		<h2>PASSAGENS AÉREAS</h2>
 		<div class="border rounded"
 		  data-skyscanner-widget="FlightSearchWidget"

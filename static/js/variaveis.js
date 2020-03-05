@@ -23,7 +23,7 @@ cabecalho = `
 </div>
 </br>
 <div class="dropdown-divider"></div>
-<h3><b>PLANILHA DE CÁLCULO DE DÍARIAS E AJUDA DE CUSTO</b></h3>
+<h3><b>PLANILHA DE CÁLCULO DE DIÁRIAS E AJUDA DE CUSTO</b></h3>
 </br>
 </br>
 `
@@ -93,6 +93,8 @@ function parseMoney (x) {
 
 
 function militar(n) {
+//				TODO: Explicar como preencher ACP
+//				TODO: alert em Banco INFORMANDO QUE NÃO PODE SER CONTA SALÁRIO E QUE PODE SER QUALQUER conta
 return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n}">
 				<div class="form-row col-md-11">
 				<div class="form-group col-md-1">
@@ -131,7 +133,6 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 				  <input type="text" id="cpf-${n}" name="cpf"  class="form-control cpf" onblur='ChecaCPF ("cpf-${n}")' required>
 				</div>
 				<div class="form-group col-md-2 ajudadecusto_var" style="display:none;">
-//				TODO: Explicar como preencher
 			  		<label for="acp-${n}">Adicional Cert. Profissional</label>
 			  		<select name="acp" class="form-control ajudadecusto_var" id="acp-${n}">
 					<option value="null"></option>
@@ -153,7 +154,6 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 			  		</select>
 				</div>
 				<div class="form-group col-md-3">
-//				TODO: alert INFORMANDO QUE NÃO PODE SER CONTA SALÁRIO E QUE PODE SER QUALQUER conta
 				  <label for="banco-${n}">Banco</label>
 				  <input type="text" id="banco-${n}" name="banco" class="form-control banco" required>
 				</div>
@@ -261,7 +261,7 @@ function dadosgerais() {
 destino = document.getElementById("destino")
 missao = document.getElementById("missao")
 dados_str= (`
-<div id='dadosgerais-row'>
+<div id='dadosgerais-row' style="font-size:medium">
 <ul class="list-inline">
 <li class="list-inline-item"><b>Descrição da Viagem:</b> ${document.getElementById("descricao").value.toUpperCase()}</li>
 </ul>

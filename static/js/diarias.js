@@ -260,7 +260,13 @@ function exportar() {
 }
 
 function gerarPDF() {
+    if (!checar_campos()) {
+//    if (false) {
+        return;
+    }
+    else{
     calcular()
     imprimir ()
+}
 }
 //Término das Funções
