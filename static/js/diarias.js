@@ -29,7 +29,9 @@
         for (i=0;i<req.length;i++) {
             if (req[i].value==""||req[i].value=="null"){
                 alert("Campo "+req[i].labels[0].textContent+" vazio");
+                document.getElementById("planilha").style.display="none";
                 setTimeout(function () {document.getElementById(req[i].id).focus();},1);
+
                 return false;
                 }
         }
@@ -73,17 +75,24 @@ function params_ajudacusto () {
     }
     }
 
-
     function calc_datas () {
     var datas = document.getElementsByClassName('data');
     if (datas[0].value!="" && datas[1].value!="") {
-        difftempo = Math.abs(toDate('data_retorno')-toDate('data_saida'));
-        diffdias = Math.ceil(difftempo/(1000 * 60 * 60 * 24))+1;
+        if (toDate('data_retorno') < toDate('data_saida')) {
+        alert ("Data de Chegada deve ser igual ou maior que a Data de Saída")
+         document.getElementById("data_saida").value=""
+        document.getElementById("data_retorno").value=""
+        diffdias = 0
+        }
+        else {
+            difftempo = Math.abs(toDate('data_retorno')-toDate('data_saida'));
+            diffdias = Math.ceil(difftempo/(1000 * 60 * 60 * 24))+1;
+        }
         document.getElementById('qtde_dias').value = diffdias
 
 //Parametros de diarias
 
-        if ((diffdias<30)) {
+        if ((diffdias<30 && diffdias > 0)) {
             diffdiarias = parseFloat(diffdias)-(0.5)
         }
         else if (diffdias>=30 && diffdias<=60 && document.getElementById('missao').value == 'True') {
@@ -92,7 +101,7 @@ function params_ajudacusto () {
         else if (diffdias>=30 && diffdias<=60) {
             diffdiarias = 0
         }
-        else if (document.getElementById('missao').value == 'True') {
+        else if (diffdias > 0 && document.getElementById('missao').value == 'True') {
             diffdiarias = parseFloat(diffdias)-60
         }
         else {

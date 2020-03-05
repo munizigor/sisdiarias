@@ -1,7 +1,6 @@
 //Imprimir
 
 function imprimir() {
-//				TODO: Colocar cabeçalho e brasão
 style = `
 		<meta charset="utf-8" >
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -37,7 +36,6 @@ cabecalho = `
       mywindow.document.write('</body></html>');
       mywindow.focus();
       setTimeout(function(){mywindow.print();},1000);
-//				TODO: Retirar página em branco da impressao
       return true;
 }
 
@@ -132,27 +130,6 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 				  <label for="cpf-${n}">CPF</label>
 				  <input type="text" id="cpf-${n}" name="cpf"  class="form-control cpf" onblur='ChecaCPF ("cpf-${n}")' required>
 				</div>
-				<div class="form-group col-md-2 ajudadecusto_var" style="display:none;">
-			  		<label for="acp-${n}">Adicional Cert. Profissional</label>
-			  		<select name="acp" class="form-control ajudadecusto_var" id="acp-${n}">
-					<option value="null"></option>
-					<option value=0>Sem Capacitação</option>
-					<option value=10>Formação (CFSD, CFO, CHO)</option>
-					<option value=25>Especialização (CESEI, CMAUT, SCI)</option>
-					<option value=45>Aperfeiçoamento (CAP, CAO)</option>
-					<option value=75>Altos Estudos (CAEP, CAEO)</option>
-<!--			TODO: Aparecer apenas se pagar Ajuda de Custo-->
-			  		</select>
-				</div>
-				<div class="form-group col-md-2 ajudadecusto_var" style="display:none;">
-			  		<label for="dep-${n}">Viajará com Dependente?</label>
-			  		<select name="dep" class="form-control ajudadecusto_var" id="dep-${n}">
-					<option value="null"></option>
-					<option value=1>SIM</option>
-					<option value=2>NÃO</option>
-<!--			TODO: Aparecer apenas se pagar Ajuda de Custo-->
-			  		</select>
-				</div>
 				<div class="form-group col-md-3">
 				  <label for="banco-${n}">Banco</label>
 				  <input type="text" id="banco-${n}" name="banco" class="form-control banco" required>
@@ -164,6 +141,34 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 				<div class="form-group col-md-1">
 				  <label for="conta-${n}">Conta</label>
 				  <input type="text" id="conta-${n}" name="conta" class="form-control" required>
+				</div>
+				<div class="form-group col-md-2 ajudadecusto_var" style="display:none;">
+			  		<label for="dep-${n}">Viajará com Dependente?</label>
+			  		<select name="dep" class="form-control ajudadecusto_var" id="dep-${n}">
+					<option value="null"></option>
+					<option value=1>SIM</option>
+					<option value=2>NÃO</option>
+			  		</select>
+				</div>
+				<div class="form-group col-md-3 ajudadecusto_var" id="acp-${n}" style="display:none;">
+			  		<label for="acp-${n}">Cursos que possui</label>
+			  		</br>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="acp_10" value=10>
+                      <label class="form-check-label" for="acp_10">Formação (CFSD, CFO, CHO)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="acp_15" value=15>
+                      <label class="form-check-label" for="acp_15">Especialização (CESEI, CMAUT, SCI...)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="acp_20" value=20>
+                      <label class="form-check-label" for="acp_20">Aperfeiçoamento (CAP, CAO)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="acp_30" value=30>
+                      <label class="form-check-label" for="acp_30">Altos Estudos (CAEP, CAEO)</label>
+                    </div>
 				</div>
 				</div>
 				<div class="form-group col-md-1">
@@ -199,6 +204,16 @@ function diarias(l) {
 }
 
 function ajudadecusto(l) {
+    function acp() {
+        ind = document.getElementById("acp-"+String(l)).getElementsByTagName('input')
+        acp=0;
+        for (i=0;i<ind.length;i++) {
+        if (ind[i].checked) {
+            acp+= parseInt(ind[i].value)
+        }
+        }
+        return acp
+    }
 
     posto = document.getElementById("posto-"+String(l)).value;
     if (posto == "CEL CMT-GERAL") {
@@ -211,7 +226,7 @@ function ajudadecusto(l) {
         tempo_serv=rounddown((parseFloat(ats[document.getElementById("matricula-"+String(l)).value])/100)*
                                 parseFloat(remuneracao[posto]['soldo']));
     }
-    cert_prof = rounddown((parseFloat(document.getElementById("acp-"+String(l)).value)/100)*
+    cert_prof = rounddown((parseFloat(acp())/100)*
                             parseFloat(remuneracao[posto]['soldo']));
     remun =rounddown(parseFloat(remuneracao['gcef']) + parseFloat(remuneracao['grv']) +
                 parseFloat(remuneracao[posto]['soldo']) + parseFloat(remuneracao[posto]['vpe']) +

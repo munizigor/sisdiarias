@@ -80,6 +80,11 @@ a.nav-link{
 a.nav-link:hover {
 	background-color: #6c757d
 }
+
+.data {
+	background-color: #fff;
+}
+
 div.calculos {
 padding-top: 280px;
 border-left: 1px solid #ccc;

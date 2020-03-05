@@ -95,17 +95,15 @@
 				</div>
 				<div class="form-group col-md-2">
 				  <label for="data_saida">Data de Saída da Sede</label>
-				  <input type="text" name="data_saida" class="form-control data" id="data_saida" type=date required onblur="calc_datas()">
+				  <input type="text" name="data_saida" class="form-control data" id="data_saida" type=date required>
 				</div>
 				<div class="form-group col-md-2">
 <!--	TODO:				Verificar se data saída é menor quedata retorno-->
 				  <label for="data_retorno">Data de Chegada na Sede</label>
-				  <input type="text" name="data_retorno" class="form-control data" id="data_retorno" type=date required onblur="calc_datas()">
+				  <input type="text" name="data_retorno" class="form-control data" id="data_retorno" type=date required>
 				</div>
 				<div class="form-group col-md-2" onmouseover="mostrarmissao ()" onmouseout="removermissao ()">
-				  <label for="missao">Missão</label> <a
-						href="https://etcdf.tc.df.gov.br/?a=consultaETCDF&f=formPrincipal&edoc=D9F54FD2"
-						target="_blank">(Dec. TCDF 4663/2009)</a>
+				  <label for="missao">Missão</label>
 				  <select name="missao" class="form-control" required id="missao" onchange="calc_datas()">
 					<option value="True" selected>Eventual</option>
 					<option value="False">Não Eventual</option>
