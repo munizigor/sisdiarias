@@ -42,7 +42,7 @@
 		$(".data").datepicker({
 		    changeMonth: true,
             changeYear: true,
-            onSelect: function () { calc_datas()},
+            onSelect: function () { calc_datas(event)},
             dateFormat: 'dd/mm/yy',
             dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
             dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
@@ -75,87 +75,89 @@ function params_ajudacusto () {
     }
     }
 
-    function calc_datas () {
-    var datas = document.getElementsByClassName('data');
-    if (datas[0].value!="" && datas[1].value!="") {
-        if (toDate('data_retorno') < toDate('data_saida')) {
-        alert ("Data de Chegada deve ser igual ou maior que a Data de Saída")
-         document.getElementById("data_saida").value=""
-        document.getElementById("data_retorno").value=""
-        diffdias = 0
+
+    function calc_datas (event) {
+        var datas = document.getElementsByClassName('data');
+        if (datas[0].value!="" && datas[1].value!="") {
+            if (toDate('data_retorno') < toDate('data_saida')) {
+            alert ("Data de Chegada deve ser igual ou maior que a Data de Saída")
+             document.getElementById("data_saida").value=""
+            document.getElementById("data_retorno").value=""
+            diffdias = 0
+            }
+            else {
+                difftempo = Math.abs(toDate('data_retorno')-toDate('data_saida'));
+                diffdias = Math.ceil(difftempo/(1000 * 60 * 60 * 24))+1;
+            }
+            document.getElementById('qtde_dias').value = diffdias
+
+//Parametros de Tipo de Missão
+        if (event.target.id!='missao'){
+            if ((diffdias<30)) {
+                document.getElementById('missao').value = 'True'
+                document.getElementById('missao').setAttribute('disabled', true);
+            }
+            else if (diffdias>=30 && diffdias<60) {
+                document.getElementById('missao').value = 'False'
+                document.getElementById('missao').removeAttribute('disabled');
+            }
+            else {
+                document.getElementById('missao').value = 'True'
+                document.getElementById('missao').removeAttribute('disabled');
+            }
         }
-        else {
-            difftempo = Math.abs(toDate('data_retorno')-toDate('data_saida'));
-            diffdias = Math.ceil(difftempo/(1000 * 60 * 60 * 24))+1;
-        }
-        document.getElementById('qtde_dias').value = diffdias
 
 //Parametros de diarias
 
-        if ((diffdias<30 && diffdias > 0)) {
-            diffdiarias = parseFloat(diffdias)-(0.5)
-        }
-        else if (diffdias>=30 && diffdias<=60 && document.getElementById('missao').value == 'True') {
-            diffdiarias = parseFloat(diffdias)-(0.5)
-        }
-        else if (diffdias>=30 && diffdias<=60) {
-            diffdiarias = 0
-        }
-        else if (diffdias > 0 && document.getElementById('missao').value == 'True') {
-            diffdiarias = parseFloat(diffdias)-60
-        }
-        else {
-            diffdiarias = 0
-        }
-        document.getElementById('qtde_diarias').value = diffdiarias
+            if ((diffdias<30 && diffdias > 0)) {
+                diffdiarias = parseFloat(diffdias)-(0.5)
+            }
+            else if (diffdias>=30 && diffdias<=60 && document.getElementById('missao').value == 'True') {
+                diffdiarias = parseFloat(diffdias)-(0.5)
+            }
+            else if (diffdias>=30 && diffdias<=60) {
+                diffdiarias = 0
+            }
+            else if (diffdias > 0 && document.getElementById('missao').value == 'True') {
+                diffdiarias = parseFloat(diffdias)-60
+            }
+            else {
+                diffdiarias = 0
+            }
+            document.getElementById('qtde_diarias').value = diffdiarias
 
-//Parametros de Ajuda de Custo
+    //Parametros de Ajuda de Custo
 
-        if ((diffdias<30)) {
-            document.getElementById('ajudadecusto_ida').value=0
-            document.getElementById('ajudadecusto_volta').value=0
-        }
-        else if (diffdias>=30 && diffdias<=60 && document.getElementById('missao').value == 'False') {
-            document.getElementById('ajudadecusto_ida').value=1
-            document.getElementById('ajudadecusto_volta').value=1
-        }
-        else if (diffdias>=30 && diffdias<=60 && document.getElementById('missao').value == 'True') {
-            document.getElementById('ajudadecusto_ida').value=0
-            document.getElementById('ajudadecusto_volta').value=0
-        }
-        else if (diffdias>180) {
-            document.getElementById('ajudadecusto_ida').value=2
-            document.getElementById('ajudadecusto_volta').value=2
-        }
-        else if (diffdias>90 && diffdias<=180) {
-            document.getElementById('ajudadecusto_ida').value=2
-            document.getElementById('ajudadecusto_volta').value=1
-        }
-        else if (diffdias>=30 && diffdias<=90) {
-            document.getElementById('ajudadecusto_ida').value=1
-            document.getElementById('ajudadecusto_volta').value=1
-        }
-        else {
-            document.getElementById('ajudadecusto_ida').value=0
-            document.getElementById('ajudadecusto_volta').value=0
-        }
-//Sumir com ACP e Dependente se nao houver ajuda de custo
-        params_ajudacusto ()
-    //Parametros de Tipo de Missão
-        if ((diffdias<30)) {
-            document.getElementById('missao').value = 'True'
-            document.getElementById('missao').setAttribute('disabled', true);
-        }
-        else {
-            document.getElementById('missao').removeAttribute('disabled');
-        }
-//TODO: fazer  document.getElementById('missao').value = 'False' p/ (diffdias>=30 && diffdias<60) e True para resto, mas permitindo alterar no select
-//         else if (diffdias>=30 && diffdias<60) {
-//            document.getElementById('missao').value = 'False'
-//        }
-//        else {
-//            document.getElementById('missao').value = 'True'
-//        }
+            if ((diffdias<30)) {
+                document.getElementById('ajudadecusto_ida').value=0
+                document.getElementById('ajudadecusto_volta').value=0
+            }
+            else if (diffdias>=30 && diffdias<=60 && document.getElementById('missao').value == 'False') {
+                document.getElementById('ajudadecusto_ida').value=1
+                document.getElementById('ajudadecusto_volta').value=1
+            }
+            else if (diffdias>=30 && diffdias<=60 && document.getElementById('missao').value == 'True') {
+                document.getElementById('ajudadecusto_ida').value=0
+                document.getElementById('ajudadecusto_volta').value=0
+            }
+            else if (diffdias>180) {
+                document.getElementById('ajudadecusto_ida').value=2
+                document.getElementById('ajudadecusto_volta').value=2
+            }
+            else if (diffdias>90 && diffdias<=180) {
+                document.getElementById('ajudadecusto_ida').value=2
+                document.getElementById('ajudadecusto_volta').value=1
+            }
+            else if (diffdias>=30 && diffdias<=90) {
+                document.getElementById('ajudadecusto_ida').value=1
+                document.getElementById('ajudadecusto_volta').value=1
+            }
+            else {
+                document.getElementById('ajudadecusto_ida').value=0
+                document.getElementById('ajudadecusto_volta').value=0
+            }
+    //Sumir com ACP e Dependente se nao houver ajuda de custo
+            params_ajudacusto ()
     }
     }
 
@@ -172,7 +174,6 @@ function params_ajudacusto () {
                 elem.insertAdjacentHTML('beforeend', militar(c));
                 //Sumir com ACP e Dependente se nao houver ajuda de custo
                 params_ajudacusto ();
-//                listcpf = document.getElementsByName("cpf");
                 $(".cpf").mask("000.000.000-00");
                 setTimeout(banco_autocomplete (),500)
 
@@ -184,7 +185,6 @@ function params_ajudacusto () {
                     n-=1;
                     //Sumir com ACP e Dependente se nao houver ajuda de custo
                     params_ajudacusto ();
-//                    listcpf = document.getElementsByName("cpf");
                     $(".cpf").mask("000.000.000-00");
                     }
             }
@@ -222,7 +222,7 @@ function calc_ind(id) {
 
 //Termino funcoes calculos individuais
 function calcular() {
-//    checar_campos()
+//    Antes de calcular, checar se campos estao preenchidos
     if (!checar_campos()) {
 //    if (false) {
         return;
@@ -254,7 +254,6 @@ function calcular() {
     else {
             document.getElementById('ajudadecusto_div').style.display='block';
     }
-//    alert ("Calcular");
     }
 
 }

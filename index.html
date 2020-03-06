@@ -98,13 +98,12 @@
 				  <input type="text" name="data_saida" class="form-control data" id="data_saida" type=date required>
 				</div>
 				<div class="form-group col-md-2">
-<!--	TODO:				Verificar se data saída é menor quedata retorno-->
 				  <label for="data_retorno">Data de Chegada na Sede</label>
 				  <input type="text" name="data_retorno" class="form-control data" id="data_retorno" type=date required>
 				</div>
 				<div class="form-group col-md-2" onmouseover="mostrarmissao ()" onmouseout="removermissao ()">
 				  <label for="missao">Missão</label>
-				  <select name="missao" class="form-control" required id="missao" onchange="calc_datas()">
+				  <select name="missao" class="form-control" required id="missao" onchange="calc_datas(event)">
 					<option value="True" selected>Eventual</option>
 					<option value="False">Não Eventual</option>
 				  </select>

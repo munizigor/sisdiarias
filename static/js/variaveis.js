@@ -10,14 +10,17 @@ style = `
 cabecalho = `
 </br>
 <div class="form-row">
-<div class="form-group col-md-1">
+<div class="form-group col-md-2">
 	<img src="static/img/brasao.png" alt="Brasao" height="120" width="120">
 </div>
-<div class="form-group col-md-10" >
+<div class="form-group col-md-8" >
 <h6>CORPO DE BOMBEIROS MILITAR DO DISTRITO FEDERAL</h6>
 <h6>DEPARTAMENTO DE RECURSOS HUMANOS</h6>
 <h6>DIRETORIA DE GESTÃO DE PESSOAL</h6>
-<h6>SEÇÃO DE PAGAMENTO DE PESSOAL</h6>
+<h6>SEÇÃO DE PAGAMENTO</h6>
+</div>
+<div class="form-group col-md-2">
+	<img src="static/img/gdf.png" alt="Brasao" height="120" width="120">
 </div>
 </div>
 </br>
@@ -30,9 +33,11 @@ cabecalho = `
     mywindow.document.write('<html><head><title>Planilha de Pagamento - Diárias</title>');
     mywindow.document.write(style)
     mywindow.document.write('</head><body>');
+    mywindow.document.write(`<div class="content container">`)
     mywindow.document.write(cabecalho)
       h=document.getElementById('planilha').outerHTML
       mywindow.document.write(h)
+      mywindow.document.write('</div>')
       mywindow.document.write('</body></html>');
       mywindow.focus();
       setTimeout(function(){mywindow.print();},1000);
@@ -154,20 +159,20 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 			  		<label for="acp-${n}">Cursos que possui</label>
 			  		</br>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="acp_10" value=10>
-                      <label class="form-check-label" for="acp_10">Formação (CFSD, CFO, CHO)</label>
+                      <input class="form-check-input" type="checkbox" id="acp_10-${n}" value=10>
+                      <label class="form-check-label" for="acp_10-${n}">Formação (CFSD, CFO, CHO)</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="acp_15" value=15>
-                      <label class="form-check-label" for="acp_15">Especialização (CESEI, CMAUT, SCI...)</label>
+                      <input class="form-check-input" type="checkbox" id="acp_15-${n}" value=15>
+                      <label class="form-check-label" for="acp_15-${n}">Especialização (CESEI, CMAUT, SCI...)</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="acp_20" value=20>
-                      <label class="form-check-label" for="acp_20">Aperfeiçoamento (CAP, CAO)</label>
+                      <input class="form-check-input" type="checkbox" id="acp_20-${n}" value=20>
+                      <label class="form-check-label" for="acp_20-${n}">Aperfeiçoamento (CAP, CAO)</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="acp_30" value=30>
-                      <label class="form-check-label" for="acp_30">Altos Estudos (CAEP, CAEO)</label>
+                      <input class="form-check-input" type="checkbox" id="acp_30-${n}" value=30>
+                      <label class="form-check-label" for="acp_30-${n}">Altos Estudos (CAEP, CAEO)</label>
                     </div>
 				</div>
 				</div>
@@ -176,6 +181,7 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 					<button class="botao-del" id="del-${n}" title="Excluir linha">
 				</div>
 			</div>
+			</br>
 			`);
 			}
 
@@ -204,15 +210,12 @@ function diarias(l) {
 }
 
 function ajudadecusto(l) {
-    function acp() {
-        ind = document.getElementById("acp-"+String(l)).getElementsByTagName('input')
-        acp=0;
-        for (i=0;i<ind.length;i++) {
-        if (ind[i].checked) {
-            acp+= parseInt(ind[i].value)
-        }
-        }
-        return acp
+    ind = document.getElementById("acp-"+String(l)).getElementsByTagName('input')
+    acp=0;
+    for (count=0;count<ind.length;count++) {
+    if (ind[count].checked) {
+        acp+= parseInt(ind[count].value)
+    }
     }
 
     posto = document.getElementById("posto-"+String(l)).value;
@@ -226,8 +229,9 @@ function ajudadecusto(l) {
         tempo_serv=rounddown((parseFloat(ats[document.getElementById("matricula-"+String(l)).value])/100)*
                                 parseFloat(remuneracao[posto]['soldo']));
     }
-    cert_prof = rounddown((parseFloat(acp())/100)*
+    cert_prof = rounddown((parseFloat(acp)/100)*
                             parseFloat(remuneracao[posto]['soldo']));
+//cert_prof = 0;
     remun =rounddown(parseFloat(remuneracao['gcef']) + parseFloat(remuneracao['grv']) +
                 parseFloat(remuneracao[posto]['soldo']) + parseFloat(remuneracao[posto]['vpe']) +
                 parseFloat(remuneracao[posto]['apg']) + parseFloat(remuneracao[posto]['aom']) +
