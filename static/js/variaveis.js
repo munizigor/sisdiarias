@@ -102,7 +102,7 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 				<div class="form-row col-md-11">
 				<div class="form-group col-md-1">
 				  <label for="matricula-${n}">Matrícula</label>
-				  <input type="text" id="matricula-${n}" name="matricula" class="form-control" required>
+				  <input type="text" id="matricula-${n}" name="matricula" class="form-control">
 				</div>
 				<div class="form-group col-md-2">
 				  <label for="posto-${n}">Posto/Grad</label>
@@ -129,23 +129,23 @@ return (`<div class="form-row militares-row mil-${n} border rounded" id="mil-${n
 				</div>
 				<div class="form-group col-md-4">
 				  <label for="nome-${n}">Nome</label>
-				  <input type="text" id="nome-${n}" name="nome" class="form-control" required>
+				  <input type="text" id="nome-${n}" name="nome" class="form-control">
 				</div>
 				<div class="form-group col-md-2">
 				  <label for="cpf-${n}">CPF</label>
-				  <input type="text" id="cpf-${n}" name="cpf"  class="form-control cpf" onblur='ChecaCPF ("cpf-${n}")' required>
+				  <input type="text" id="cpf-${n}" name="cpf"  class="form-control cpf" onblur='ChecaCPF ("cpf-${n}")'>
 				</div>
 				<div class="form-group col-md-3">
 				  <label for="banco-${n}">Banco</label>
-				  <input type="text" id="banco-${n}" name="banco" class="form-control banco" required>
+				  <input type="text" id="banco-${n}" name="banco" class="form-control banco">
 				</div>
 				<div class="form-group col-md-1">
 				  <label for="agencia-${n}">Agência</label>
-				  <input type="text" id="agencia-${n}" name="agencia" class="form-control" required>
+				  <input type="text" id="agencia-${n}" name="agencia" class="form-control">
 				</div>
 				<div class="form-group col-md-1">
 				  <label for="conta-${n}">Conta</label>
-				  <input type="text" id="conta-${n}" name="conta" class="form-control" required>
+				  <input type="text" id="conta-${n}" name="conta" class="form-control">
 				</div>
 				<div class="form-group col-md-2 ajudadecusto_var" style="display:none;">
 			  		<label for="dep-${n}">Viajará com Dependente?</label>
