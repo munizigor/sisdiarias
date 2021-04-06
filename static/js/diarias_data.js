@@ -252,7 +252,7 @@ remuneracao= {
       "grv":1000,
       "CORONEL":{
          "soldo":3195.04,
-         "vpe":7279.17,
+         "vpe":9098.96,
          "apg":2556.03,
          "aom":405.77,
          "gfr":31.95,
@@ -262,7 +262,7 @@ remuneracao= {
       },
       "TENENTE-CORONEL":{
          "soldo":3067.23,
-         "vpe":6999.45,
+         "vpe": 8749.31,
          "apg":2453.78,
          "aom":405.77,
          "gfr":30.67,
@@ -272,7 +272,7 @@ remuneracao= {
       },
       "MAJOR":{
          "soldo":2929.85,
-         "vpe":6309.39,
+         "vpe": 7886.74,
          "apg":2343.88,
          "aom":405.77,
          "gfr":29.29,
@@ -282,7 +282,7 @@ remuneracao= {
       },
       "CAPITAO":{
          "soldo":2434.62,
-         "vpe":5341.12,
+         "vpe": 6676.40,
          "apg":1825.96,
          "aom":405.77,
          "gfr":24.34,
@@ -292,7 +292,7 @@ remuneracao= {
       },
       "PRIMEIRO TENENTE":{
          "soldo":2249.31,
-         "vpe":4733.7,
+         "vpe": 5917.13,
          "apg":1574.51,
          "aom":405.77,
          "gfr":22.49,
@@ -302,7 +302,7 @@ remuneracao= {
       },
       "SEGUNDO TENENTE":{
          "soldo":2079.97,
-         "vpe":4436.95,
+         "vpe": 5546.19,
          "apg":1455.97,
          "aom":405.77,
          "gfr":20.79,
@@ -312,7 +312,7 @@ remuneracao= {
       },
       "ASPIRANTE":{
          "soldo":1792.42,
-         "vpe":3725.32,
+         "vpe": 4656.65,
          "apg":1254.69,
          "aom":405.77,
          "gfr":17.92,
@@ -322,7 +322,7 @@ remuneracao= {
       },
       "SUBTENENTE":{
          "soldo":1613.49,
-         "vpe":3611.19,
+         "vpe": 4513.99,
          "apg":1048.76,
          "aom":405.77,
          "gfr":16.13,
@@ -332,7 +332,7 @@ remuneracao= {
       },
       "PRIMEIRO SARGENTO":{
          "soldo":1405.82,
-         "vpe":3251.95,
+         "vpe": 4064.94,
          "apg":913.78,
          "aom":405.77,
          "gfr":14.05,
@@ -342,7 +342,7 @@ remuneracao= {
       },
       "SEGUNDO SARGENTO":{
          "soldo":1201.33,
-         "vpe":2917.07,
+         "vpe": 3646.34,
          "apg":780.86,
          "aom":405.77,
          "gfr":12.01,
@@ -352,7 +352,7 @@ remuneracao= {
       },
       "TERCEIRO SARGENTO":{
          "soldo":1070.34,
-         "vpe":2629.03,
+         "vpe": 3286.29,
          "apg":695.72,
          "aom":405.77,
          "gfr":10.7,
@@ -362,7 +362,7 @@ remuneracao= {
       },
       "CABO":{
          "soldo":801.95,
-         "vpe":2240.07,
+         "vpe": 2800.09,
          "apg":481.17,
          "aom":405.77,
          "gfr":8.01,
@@ -372,7 +372,7 @@ remuneracao= {
       },
       "SOLDADO PRIMEIRA CLASSE":{
          "soldo":706.1,
-         "vpe":2119.4,
+         "vpe": 2649.25,
          "apg":423.66,
          "aom":405.77,
          "gfr":7.06,
@@ -382,7 +382,7 @@ remuneracao= {
       },
       "SOLDADO SEGUNDA CLASSE":{
          "soldo":501.62,
-         "vpe":1498.95,
+         "vpe": 1873.69,
          "apg":250.81,
          "aom":405.77,
          "gfr":5.01,
@@ -392,7 +392,7 @@ remuneracao= {
       },
       "CADETE ULTIMO ANO":{
          "soldo":706.1,
-         "vpe":2041.38,
+         "vpe": 2551.73,
          "apg":353.05,
          "aom":405.77,
          "gfr":7.06,
@@ -402,7 +402,7 @@ remuneracao= {
       },
       "CADETE PRIMEIRO ANO":{
          "soldo":501.62,
-         "vpe":1498.95,
+         "vpe": 1873.69,
          "apg":250.81,
          "aom":405.77,
          "gfr":5.01,
