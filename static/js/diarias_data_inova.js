@@ -220,7 +220,7 @@ diarias_nac={
 }
 }
 
-let remuneracao= {
+remuneracao = {
       "alim":850,
       "gcef":406.89,
       "grv":1000,
