@@ -250,166 +250,167 @@ remuneracao= {
       "alim":850,
       "gcef":406.89,
       "grv":1000,
-      "CORONEL":{
-         "soldo":3195.04,
-         "vpe":9098.96,
-         "apg":2556.03,
-         "aom":405.77,
-         "gfr":31.95,
-         "amcd":3600,
-         "amsd":1200,
-         "cotafsa":18
-      },
-      "TENENTE-CORONEL":{
-         "soldo":3067.23,
-         "vpe": 8749.31,
-         "apg":2453.78,
-         "aom":405.77,
-         "gfr":30.67,
-         "amcd":3473.61,
-         "amsd":1157.87,
-         "cotafsa":18
-      },
-      "MAJOR":{
-         "soldo":2929.85,
-         "vpe": 7886.74,
-         "apg":2343.88,
-         "aom":405.77,
-         "gfr":29.29,
-         "amcd":3256.66,
-         "amsd":1085.55,
-         "cotafsa":18
-      },
-      "CAPITAO":{
-         "soldo":2434.62,
-         "vpe": 6676.40,
-         "apg":1825.96,
-         "aom":405.77,
-         "gfr":24.34,
-         "amcd":2613.52,
-         "amsd":871.17,
-         "cotafsa":16
-      },
-      "PRIMEIRO TENENTE":{
-         "soldo":2249.31,
-         "vpe": 5917.13,
-         "apg":1574.51,
-         "aom":405.77,
-         "gfr":22.49,
-         "amcd":2284.63,
-         "amsd":761.54,
-         "cotafsa":16
-      },
-      "SEGUNDO TENENTE":{
-         "soldo":2079.97,
-         "vpe": 5546.19,
-         "apg":1455.97,
-         "aom":405.77,
-         "gfr":20.79,
-         "amcd":2153.71,
-         "amsd":717.9,
-         "cotafsa":16
-      },
-      "ASPIRANTE":{
-         "soldo":1792.42,
-         "vpe": 4656.65,
-         "apg":1254.69,
-         "aom":405.77,
-         "gfr":17.92,
-         "amcd":1813.48,
-         "amsd":604.49,
-         "cotafsa":16
-      },
-      "SUBTENENTE":{
-         "soldo":1613.49,
-         "vpe": 4513.99,
-         "apg":1048.76,
-         "aom":405.77,
-         "gfr":16.13,
-         "amcd":1942.54,
-         "amsd":647.51,
-         "cotafsa":14
-      },
-      "PRIMEIRO SARGENTO":{
-         "soldo":1405.82,
-         "vpe": 4064.94,
-         "apg":913.78,
-         "aom":405.77,
-         "gfr":14.05,
-         "amcd":1763.5,
-         "amsd":587.83,
-         "cotafsa":14
-      },
-      "SEGUNDO SARGENTO":{
-         "soldo":1201.33,
-         "vpe": 3646.34,
-         "apg":780.86,
-         "aom":405.77,
-         "gfr":12.01,
-         "amcd":1516.07,
-         "amsd":505.36,
-         "cotafsa":14
-      },
-      "TERCEIRO SARGENTO":{
-         "soldo":1070.34,
-         "vpe": 3286.29,
-         "apg":695.72,
-         "aom":405.77,
-         "gfr":10.7,
-         "amcd":1398.52,
-         "amsd":466.17,
-         "cotafsa":14
-      },
-      "CABO":{
-         "soldo":801.95,
-         "vpe": 2800.09,
-         "apg":481.17,
-         "aom":405.77,
-         "gfr":8.01,
-         "amcd":1157.83,
-         "amsd":385.94,
-         "cotafsa":12
-      },
-      "SOLDADO PRIMEIRA CLASSE":{
-         "soldo":706.1,
-         "vpe": 2649.25,
-         "apg":423.66,
-         "aom":405.77,
-         "gfr":7.06,
-         "amcd":1095.58,
-         "amsd":365.19,
-         "cotafsa":12
-      },
-      "SOLDADO SEGUNDA CLASSE":{
-         "soldo":501.62,
-         "vpe": 1873.69,
-         "apg":250.81,
-         "aom":405.77,
-         "gfr":5.01,
-         "amcd":850.59,
-         "amsd":283.53,
-         "cotafsa":8
-      },
-      "CADETE ULTIMO ANO":{
-         "soldo":706.1,
-         "vpe": 2551.73,
-         "apg":353.05,
-         "aom":405.77,
-         "gfr":7.06,
-         "amcd":1027.86,
-         "amsd":342.62,
-         "cotafsa":8
-      },
-      "CADETE PRIMEIRO ANO":{
-         "soldo":501.62,
-         "vpe": 1873.69,
-         "apg":250.81,
-         "aom":405.77,
-         "gfr":5.01,
-         "amcd":850.59,
-         "amsd":283.53,
-         "cotafsa":8
-      }
+      {
+  "CORONEL": {
+    "soldo": 4800.0,
+    "vpe": 15452.11,
+    "apg": 3840.0,
+    "aom": 609.6,
+    "gfr": 48.0,
+    "amcd": 4475.61,
+    "amsd": 1491.87,
+    "cotafsa": 18
+  },
+  "TENENTE-CORONEL": {
+    "soldo": 4608.0,
+    "vpe": 13533.03,
+    "apg": 3686.4,
+    "aom": 609.6,
+    "gfr": 46.08,
+    "amcd": 4318.48,
+    "amsd": 1439.49,
+    "cotafsa": 18
+  },
+  "MAJOR": {
+    "soldo": 4401.6,
+    "vpe": 11611.03,
+    "apg": 3521.28,
+    "aom": 609.6,
+    "gfr": 44.01,
+    "amcd": 4048.76,
+    "amsd": 1349.58,
+    "cotafsa": 18
+  },
+  "CAPITAO": {
+    "soldo": 3657.6,
+    "vpe": 10170.43,
+    "apg": 2743.2,
+    "aom": 609.6,
+    "gfr": 36.57,
+    "amcd": 3249.19,
+    "amsd": 1083.06,
+    "cotafsa": 16
+  },
+  "PRIMEIRO TENENTE": {
+    "soldo": 3379.2,
+    "vpe": 10093.99,
+    "apg": 2365.44,
+    "aom": 609.6,
+    "gfr": 33.79,
+    "amcd": 2840.31,
+    "amsd": 946.77,
+    "cotafsa": 16
+  },
+  "SEGUNDO TENENTE": {
+    "soldo": 3124.8,
+    "vpe": 9873.7,
+    "apg": 2187.36,
+    "aom": 609.6,
+    "gfr": 31.24,
+    "amcd": 2677.55,
+    "amsd": 892.51,
+    "cotafsa": 16
+  },
+  "ASPIRANTE": {
+    "soldo": 2692.8,
+    "vpe": 7469.25,
+    "apg": 1884.96,
+    "aom": 609.6,
+    "gfr": 26.92,
+    "amcd": 2254.56,
+    "amsd": 751.52,
+    "cotafsa": 16
+  },
+  "SUBTENENTE": {
+    "soldo": 2424.0,
+    "vpe": 10353.04,
+    "apg": 1575.6,
+    "aom": 609.6,
+    "gfr": 24.24,
+    "amcd": 2415.01,
+    "amsd": 805.0,
+    "cotafsa": 14
+  },
+  "PRIMEIRO SARGENTO": {
+    "soldo": 2112.0,
+    "vpe": 7161.85,
+    "apg": 1372.8,
+    "aom": 609.6,
+    "gfr": 21.12,
+    "amcd": 2192.43,
+    "amsd": 730.8,
+    "cotafsa": 14
+  },
+  "SEGUNDO SARGENTO": {
+    "soldo": 1804.8,
+    "vpe": 6240.41,
+    "apg": 1173.12,
+    "aom": 609.6,
+    "gfr": 18.04,
+    "amcd": 1884.82,
+    "amsd": 628.28,
+    "cotafsa": 14
+  },
+  "TERCEIRO SARGENTO": {
+    "soldo": 1608.0,
+    "vpe": 5905.03,
+    "apg": 1045.2,
+    "aom": 609.6,
+    "gfr": 16.08,
+    "amcd": 1738.68,
+    "amsd": 579.55,
+    "cotafsa": 14
+  },
+  "CABO": {
+    "soldo": 1204.8,
+    "vpe": 5343.21,
+    "apg": 722.88,
+    "aom": 609.6,
+    "gfr": 12.04,
+    "amcd": 1439.44,
+    "amsd": 479.81,
+    "cotafsa": 12
+  },
+  "SOLDADO PRIMEIRA CLASSE": {
+    "soldo": 1060.8,
+    "vpe": 5110.76,
+    "apg": 636.48,
+    "aom": 609.6,
+    "gfr": 10.6,
+    "amcd": 1362.05,
+    "amsd": 454.01,
+    "cotafsa": 12
+  },
+  "SOLDADO SEGUNDA CLASSE": {
+    "soldo": 753.6,
+    "vpe": 3647.61,
+    "apg": 376.8,
+    "aom": 609.6,
+    "gfr": 7.53,
+    "amcd": 1057.47,
+    "amsd": 352.49,
+    "cotafsa": 8
+  },
+  "CADETE ULTIMO ANO": {
+    "soldo": 1060.8,
+    "vpe": 4667.88,
+    "apg": 530.4,
+    "aom": 609.6,
+    "gfr": 10.6,
+    "amcd": 1277.86,
+    "amsd": 425.95,
+    "cotafsa": 8
+  },
+  "CADETE DEMAIS ANOS": {
+    "soldo": 753.6,
+    "vpe": 3647.61,
+    "apg": 376.8,
+    "aom": 609.6,
+    "gfr": 7.53,
+    "amcd": 1057.47,
+    "amsd": 352.49,
+    "cotafsa": 8
+  }
 }
 
 
