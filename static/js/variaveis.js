@@ -282,7 +282,10 @@ missao = document.getElementById("missao")
 dados_str= (`
 <div id='dadosgerais-row' style="font-size:medium">
 <ul class="list-inline">
-<li class="list-inline-item"><b>Legislação de Referência:</b> Decreto nº 12.324, de 19 de dezembro de 2024</li>
+<li class="list-inline-item">
+  <b>Legislação de Referência:</b> 
+  <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/Decreto/D12324.htm" target="_blank">Decreto Federal nº 12.324, de 19 de dezembro de 2024</a>
+</li>
 </ul>
 <ul class="list-inline">
 <li class="list-inline-item"><b>Descrição da Viagem:</b> ${document.getElementById("descricao").value.toUpperCase()}</li>
